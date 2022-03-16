@@ -1,3 +1,4 @@
+
 <?php
 require_once("login-script.php");
 ?>
@@ -58,13 +59,12 @@ require_once("login-script.php");
     }
 
     input[type=password] {
-        display: block;
-        height: 38px;
-        border: none;
-        width: 280px;
-        text-align: center;
-    }
-
+    display: block;
+    height: 38px;
+    border: none;
+    width: 280px;
+    text-align: center;
+}
 </style>
 <script>
     $(document).ready(function() {
@@ -95,6 +95,7 @@ require_once("login-script.php");
             <a href="#" data-target="php/signup" class="sign">Załóż konto</a>
         </div>
         <div>
+
             <?php
                             if(isset($_SESSION['e_txt_uname']))
                             {
@@ -109,6 +110,7 @@ require_once("login-script.php");
                                 unset($_SESSION['e_txt_pwd']);
                             }
                         ?>
+
         </div>
     </div>
 </form>
