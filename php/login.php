@@ -1,3 +1,8 @@
+
+<?php
+require_once("login-script.php");
+?>
+
 <style>
     #div_login {
         width: 290px;
@@ -52,6 +57,7 @@
     .sign:hover {
         background-color: #f63e38;
     }
+
     input[type=password] {
     display: block;
     height: 38px;
@@ -89,6 +95,21 @@
             <a href="#" data-target="php/signup" class="sign">Załóż konto</a>
         </div>
         <div>
+
+            <?php
+                            if(isset($_SESSION['e_txt_uname']))
+                            {
+                                echo '<div class="error">'.$_SESSION['e_txt_uname'].'</div>';
+                                unset($_SESSION['e_txt_uname']);
+                            }
+                        ?>
+            <?php
+                            if(isset($_SESSION['e_txt_pwd']))
+                            {
+                                echo '<div class="error">'.$_SESSION['e_txt_pwd'].'</div>';
+                                unset($_SESSION['e_txt_pwd']);
+                            }
+                        ?>
 
         </div>
     </div>
