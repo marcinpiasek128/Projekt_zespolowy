@@ -33,7 +33,7 @@ body {
 a.logolink {
     text-decoration: none;
     display: block;
-    color: #ececec;
+    color: orange;
 }
 
 a > img {

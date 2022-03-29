@@ -1,6 +1,5 @@
 <?php
-session_start();
-require("connect.php")
+require("rating.php")
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
