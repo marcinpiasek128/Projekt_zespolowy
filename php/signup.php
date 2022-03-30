@@ -37,7 +37,9 @@ require("signup-script.php");
                             <li><a href="?><?php
                                 if($_SESSION['Username']=='admin')
                                 {
-                                    echo "index.php";
+
+                                    echo "adminpage.php";
+
                                 }
                                 else
                                 {
