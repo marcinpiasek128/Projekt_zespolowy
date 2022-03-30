@@ -1,11 +1,10 @@
 <?php
 require("connect.php");
-if($conn->connect_errno!=0)
-{
+if($conn->connect_errno!=0) {
     echo "Error: ".$conn->connect_errno;
 }
-else
-{
+else {
+
     if(isset($_POST['ocen']))
     {
         $Iduser = $_SESSION['ID_User'];

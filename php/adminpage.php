@@ -1,6 +1,8 @@
 <?php
 session_start();
-require("connect.php")
+
+require("addmovie.php")
+
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
