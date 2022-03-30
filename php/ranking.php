@@ -1,5 +1,6 @@
 <?php
-require("rating.php")
+session_start();
+require("connect.php")
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -36,19 +37,19 @@ require("rating.php")
                             <li><a href="?><?php
                                 if($_SESSION['Username']=='admin')
                                 {
-                                    echo "../index.php";
+                                    echo "index.php";
                                 }
                                 else
                                 {
-                                    echo "../index.php";
+                                    echo "index.php";
                                 }
                             ?><?php echo">Profil</a></li>
-                            <li><a href="."logout.php".">Wyloguj</a></li>
+                            <li><a href="."php/logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }
                 else
                 {
-                    echo "<li><a href="."login.php".">Logowanie</a></li>";
+                    echo "<li><a href="."php/login.php".">Logowanie</a></li>";
                 }
                 ?>
             </ol>
