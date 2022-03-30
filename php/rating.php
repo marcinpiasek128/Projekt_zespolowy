@@ -4,7 +4,6 @@ if($conn->connect_errno!=0) {
     echo "Error: ".$conn->connect_errno;
 }
 else {
-
     if(isset($_POST['ocen']))
     {
         $Iduser = $_SESSION['ID_User'];

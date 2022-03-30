@@ -49,6 +49,7 @@ require("connect.php")
                                     echo "userpage.php";
                                 }
                             ?><?php echo">Profil</a></li>
+                            <li><a href="."settings.php".">Ustawienia</a></li>
                             <li><a href="."logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }

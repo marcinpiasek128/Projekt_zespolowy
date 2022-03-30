@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 require("addmovie.php")
-
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -47,6 +45,7 @@ require("addmovie.php")
                                     echo "userpage.php";
                                 }
                             ?><?php echo">Profil</a></li>
+                            <li><a href="."settings.php".">Ustawienia</a></li>
                             <li><a href="."logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }

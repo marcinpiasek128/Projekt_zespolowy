@@ -65,3 +65,34 @@
 	color: white;
 	font-size: 20px;
 }
+
+#sorting_options {
+    background-color: #353535;
+    height: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.gatunek {
+    float: left;
+    width: 48%;
+    padding: 1%;
+}
+
+.sortuj {
+    float: left;
+    width: 48%;
+    padding: 1%;
+    text-align: right;
+}
+
+#gatunek {
+    font-size: 20px;
+    width: 180px;
+    text-align: center;
+}
+
+#sortuj_po {
+    font-size: 20px;
+    width: 180px;
+    text-align: center;
+}
