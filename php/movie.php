@@ -104,20 +104,25 @@ require("connect.php")
                     <div class="leftcolumn">
                         <img src="../pictures/<?php echo $Poster_picture?>.jpg" alt="movie poster" />
                         <br />
-                        <?php echo $Time.' minut'?>
+                        
+                        <a href="<?php echo $Trailer?>" class="logolink">
+                            <img src="../pictures/yt.png" alt="Youtube logo" style="width: 100px;" />
+                        </a>
+                        
                     </div>
                     <div class="rightcolumn">
                         <div class="info">
-                            Gatunek:<?php echo $Directors ?>
+                            Gatunek: <?php echo $Type ?>
                             <br /><br />
-                            Reżyseria:<?php echo $Type ?>
+                            Reżyseria: <?php echo $Directors ?>
                             <br /><br />
-                            Scenariusz:<?php echo $Writers ?>
+                            Scenariusz: <?php echo $Writers ?>
                             <br /><br />
-                            Produkcja:<?php echo $Production ?>
+                            Produkcja: <?php echo $Production ?>
                             <br /><br />
-                            Premiera:<?php echo $Year ?>
+                            Premiera: <?php echo $Year ?>
                             <br /><br />
+                            Czas Trwania: <?php echo $Time?>minut
                         </div>
                         <div class="rating">
                             <h1>Ocena: <?php echo $averageRating; ?></h1>
