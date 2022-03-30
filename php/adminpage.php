@@ -1,5 +1,6 @@
 <?php
-require_once("login-script.php");
+session_start();
+require("addmovie.php")
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -9,14 +10,14 @@ require_once("login-script.php");
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" type="text/css" href="../css/movie.css" />
 </head>
 
 <body>
     <div id="all">
         <div id="header">
             <div id="logo">
-                <a href="../index.php" class="logolink">
+                <a href="index.php" class="logolink">
                     <img src="../pictures/logo.png" alt="bloody hand" />
                     <span class="logotekst1">MOVIEHUB</span>
                 </a>
@@ -25,7 +26,7 @@ require_once("login-script.php");
         <div id="navigation">
             <ol>
                 <li><a href="../index.php">Strona Główna</a></li>
-                <li><a href="../php/ranking.php">Ranking</a></li>
+                <li><a href="ranking.php">Ranking</a></li>
                 <li>
                     <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
@@ -37,11 +38,7 @@ require_once("login-script.php");
                             <li><a href="?><?php
                                 if($_SESSION['Username']=='admin')
                                 {
-
                                     echo "adminpage.php";
-
-                                    
-
                                 }
                                 else
                                 {
@@ -61,36 +58,39 @@ require_once("login-script.php");
         <div id="content">
             <form method="post">
                 <div id="div_login">
-                    <h1>Logowanie</h1>
+                    <h1>Witaj w panelu administratora!</h1>
                     <div>
-                        <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Nazwa użytkownika" />
+                        <input type="text" class="textbox" id="txt_title" name="txt_title" placeholder="Tytuł" />
                     </div>
                     <div>
-                        <input type="password" class="textbox" id="txt_pwd" name="txt_pwd" placeholder="Hasło" />
+                        <input type="text" class="textbox" id="txt_type" name="txt_type" placeholder="Typ" />
                     </div>
                     <div>
-                        <input type="submit" value="Zaloguj" name="but_submit" id="but_submit" />
+                        <input type="text" class="textbox" id="txt_directors" name="txt_directors" placeholder="Reżyserzy" />
                     </div>
                     <div>
-                        <a href="../php/signup.php" class="sign">Załóż konto</a>
+                        <input type="text" class="textbox" id="txt_writers" name="txt_writers" placeholder="Scenarzyści" />
                     </div>
                     <div>
-
-                        <?php
-                            if(isset($_SESSION['e_txt_uname']))
-                            {
-                                echo '<div class="error">'.$_SESSION['e_txt_uname'].'</div>';
-                                unset($_SESSION['e_txt_uname']);
-                            }
-                        ?>
-                        <?php
-                            if(isset($_SESSION['e_txt_pwd']))
-                            {
-                                echo '<div class="error">'.$_SESSION['e_txt_pwd'].'</div>';
-                                unset($_SESSION['e_txt_pwd']);
-                            }
-                        ?>
-
+                        <input type="text" class="textbox" id="txt_production" name="txt_production" placeholder="Produkcja" />
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" id="txt_year" name="txt_year" placeholder="Rok" />
+                    </div>
+                    <div>
+                        <input type="file" id="txt_poster_picture" name="txt_poster_picture"/>
+                    </div>
+                    <div>
+                        <textarea id="txt_description" name="txt_description" rows="7" cols="38" placeholder="Opis"></textarea>
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" id="txt_time" name="txt_time" placeholder="Czas Trwania" />
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" id="txt_trailer" name="txt_trailer" placeholder="Link do trailera" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Dodaj!" name="but_submit" id="but_submit" />
                     </div>
                 </div>
             </form>
