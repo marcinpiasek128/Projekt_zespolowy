@@ -41,11 +41,11 @@ else
             $_SESSION['Username']=$row['Username'];
             if($_SESSION['Username'] == 'admin')
             {
-                header('Location: ../index.php');
+                header('Location: adminpage.php');
             }
             else
             {
-                header('Location: ../index.php');
+                header('Location: userpage.php');
             }
         }
         $conn->close();
