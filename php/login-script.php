@@ -45,7 +45,7 @@ else
             }
             else
             {
-                header('Location: ../index.php');
+                header('Location: userpage.php');
             }
         }
         $conn->close();

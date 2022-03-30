@@ -29,7 +29,29 @@ require_once("login-script.php");
                 <li>
                     <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
-                <li><a href="../php/login.php">Logowanie</a></li>
+                <?php
+                if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+                {
+                    echo "<li><a href="."#".">".$_SESSION['Username']."</a>
+                        <ul>
+                            <li><a href="?><?php
+                                if($_SESSION['Username']=='admin')
+                                {
+                                    echo "index.php";
+                                }
+                                else
+                                {
+                                    echo "userpage.php";
+                                }
+                            ?><?php echo">Profil</a></li>
+                            <li><a href="."logout.php".">Wyloguj</a></li>
+                            </ul></li>";
+                }
+                else
+                {
+                    echo "<li><a href="."login.php".">Logowanie</a></li>";
+                }
+                ?>
             </ol>
         </div>
         <div id="content">
