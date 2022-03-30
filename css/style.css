@@ -121,6 +121,13 @@ ol > li > ul > li:hover > a {
 	text-align: center;
 }
 
+#user {
+	text-align: center;
+}
+
+#rated {
+	text-align: center;
+}
 #content {
 	width: 60%;
 	padding-top: 1.5rem;

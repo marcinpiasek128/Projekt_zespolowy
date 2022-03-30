@@ -41,15 +41,15 @@ require("connect.php")
                                 }
                                 else
                                 {
-                                    echo "index.php";
+                                    echo "userpage.php";
                                 }
                             ?><?php echo">Profil</a></li>
-                            <li><a href="."php/logout.php".">Wyloguj</a></li>
+                            <li><a href="."logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }
                 else
                 {
-                    echo "<li><a href="."php/login.php".">Logowanie</a></li>";
+                    echo "<li><a href="."login.php".">Logowanie</a></li>";
                 }
                 ?>
             </ol>
