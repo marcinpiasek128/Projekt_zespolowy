@@ -38,7 +38,9 @@ require("connect.php")
                             <li><a href="?><?php
                                 if($_SESSION['Username']=='admin')
                                 {
+
                                     echo "adminpage.php";
+
                                 }
                                 else
                                 {
