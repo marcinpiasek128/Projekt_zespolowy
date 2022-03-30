@@ -10,6 +10,7 @@ require("connect.php")
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/movie.css" />
 </head>
 
 <body>
@@ -102,10 +103,14 @@ require("connect.php")
                 <div class="row">
                     <div class="leftcolumn">
                         <img src="../pictures/<?php echo $Poster_picture?>.jpg" alt="movie poster" />
+                        <br />
+                        <?php echo $Time.' minut'?>
                     </div>
                     <div class="rightcolumn">
                         <div class="info">
-                            Reżyseria:<?php echo $Directors ?>
+                            Gatunek:<?php echo $Directors ?>
+                            <br /><br />
+                            Reżyseria:<?php echo $Type ?>
                             <br /><br />
                             Scenariusz:<?php echo $Writers ?>
                             <br /><br />
