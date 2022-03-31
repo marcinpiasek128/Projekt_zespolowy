@@ -1,5 +1,5 @@
 <?php
-require_once("login-script.php");
+require_once("settings-script.php");
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -60,11 +60,20 @@ require_once("login-script.php");
             </ol>
         </div>
         <div id="content">
+            <form method="post">
             <h2>Dane Osobowe:</h2>
-            <p>Login:</p>
-            <p>Hasło: </p>
+                    <div>
+                        <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Nazwa użytkownika" />
+                    </div>
+                    <div>
+                        <input type="password" class="textbox" id="txt_pwd" name="txt_pwd" placeholder="Hasło" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Zmień" name="but_submit" id="but_submit" />
+                    </div>
             <hr style="color: #fff">
             <h2>Zmień Awatar: </h2>
+            </form>
         </div>
         <div id="footer">
             2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.

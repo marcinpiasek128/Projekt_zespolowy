@@ -29,4 +29,5 @@ else {
         $averageRating = $fetchAverage['averageRating'];
     }
 }
+$conn->close();
 ?>
