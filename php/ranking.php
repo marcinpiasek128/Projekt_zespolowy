@@ -63,18 +63,22 @@ require("connect.php");
                 <form method="post">
                     <label for="gatunek">Gatunek:</label>
                     <select id="gatunek" name="gatunek">
-                        <option value="0">Horror</option>
-                        <option value="1">Komedia</option>
+                        <option value="0"></option>
+                        <option value="1">Horror</option>
+                        <option value="2">Komedia</option>
                     </select>
                     <label for="sortuj_po">Sortuj po:</label>
                     <select id="sortuj_po" name="sortuj_po">
-                        <option value="0">Ocena</option>
-                        <option value="1">Popularność</option>
+                        <option value="0"></option>
+                        <option value="1">Ocena</option>
+                        <option value="2">Alfabetycznie</option>
+                        <option value="3">Popularność</option>
                     </select>
+                    <input type="submit" name="send" value="Zatwierdź">
                 </form>
             </div>
             <?php
-                require("getmovie.php");
+                require("category.php");
             ?>
         </div>
         <div id="footer">
