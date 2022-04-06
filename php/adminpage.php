@@ -11,6 +11,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/movie.css" />
     <script src="../script/searchphp.js"></script>
+
 </head>
 
 <body>
@@ -28,7 +29,9 @@ session_start();
                 <li><a href="../index.php">Strona Główna</a></li>
                 <li><a href="ranking.php">Ranking</a></li>
                 <li>
+
                     <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
+
                 </li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)

@@ -12,6 +12,7 @@ require("connect.php")
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/movie.css" />
     <script src="../script/searchphp.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +30,9 @@ require("connect.php")
                 <li><a href="../index.php">Strona Główna</a></li>
                 <li><a href="../php/ranking.php">Ranking</a></li>
                 <li>
+
                     <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
+
                 </li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
