@@ -62,41 +62,11 @@ require_once("login-script.php");
             </ol>
         </div>
         <div id="content">
-            <form method="post">
-                <div id="div_login">
-                    <h1>Logowanie</h1>
-                    <div>
-                        <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Nazwa użytkownika" />
-                    </div>
-                    <div>
-                        <input type="password" class="textbox" id="txt_pwd" name="txt_pwd" placeholder="Hasło" />
-                    </div>
-                    <div>
-                        <input type="submit" value="Zaloguj" name="but_submit" id="but_submit" />
-                    </div>
-                    <div>
-                        <a href="../php/signup.php" class="sign">Załóż konto</a>
-                    </div>
-                    <div>
-
-                        <?php
-                            if(isset($_SESSION['e_txt_uname']))
-                            {
-                                echo '<div class="error">'.$_SESSION['e_txt_uname'].'</div>';
-                                unset($_SESSION['e_txt_uname']);
-                            }
-                        ?>
-                        <?php
-                            if(isset($_SESSION['e_txt_pwd']))
-                            {
-                                echo '<div class="error">'.$_SESSION['e_txt_pwd'].'</div>';
-                                unset($_SESSION['e_txt_pwd']);
-                            }
-                        ?>
-
-                    </div>
-                </div>
-            </form>
+            <h2>Dane Osobowe:</h2>
+            <p>Login:</p>
+            <p>Hasło: </p>
+            <hr style="color: #fff">
+            <h2>Zmień Awatar: </h2>
         </div>
         <div id="footer">
             2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
