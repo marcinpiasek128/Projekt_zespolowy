@@ -29,7 +29,34 @@ require_once("login-script.php");
                 <li>
                     <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
-                <li><a href="../php/login.php">Logowanie</a></li>
+                <?php
+                if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+                {
+                    echo "<li><a href="."#".">".$_SESSION['Username']."</a>
+                        <ul>
+                            <li><a href="?><?php
+                                if($_SESSION['Username']=='admin')
+                                {
+
+                                    echo "adminpage.php";
+
+                                    
+
+                                }
+                                else
+                                {
+                                    echo "userpage.php";
+                                }
+                            ?><?php echo">Profil</a></li>
+                            <li><a href="."settings.php".">Ustawienia</a></li>
+                            <li><a href="."logout.php".">Wyloguj</a></li>
+                            </ul></li>";
+                }
+                else
+                {
+                    echo "<li><a href="."login.php".">Logowanie</a></li>";
+                }
+                ?>
             </ol>
         </div>
         <div id="content">
@@ -70,7 +97,7 @@ require_once("login-script.php");
             </form>
         </div>
         <div id="footer">
-            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
+            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
     </div>
 </body>

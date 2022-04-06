@@ -1,6 +1,5 @@
 <?php
 session_start();
-require("addmovie.php")
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -57,7 +56,7 @@ require("addmovie.php")
             </ol>
         </div>
         <div id="content">
-            <form method="post">
+            <form method="post" action="addmovie.php" enctype="multipart/form-data">
                 <div id="div_login">
                     <h1>Witaj w panelu administratora!</h1>
                     <div>
@@ -79,7 +78,7 @@ require("addmovie.php")
                         <input type="text" class="textbox" id="txt_year" name="txt_year" placeholder="Rok" />
                     </div>
                     <div>
-                        <input type="file" id="txt_poster_picture" name="txt_poster_picture"/>
+                        <input type="file" id="txt_poster_picture" name="image"/>
                     </div>
                     <div>
                         <textarea id="txt_description" name="txt_description" rows="7" cols="38" placeholder="Opis"></textarea>
@@ -97,9 +96,7 @@ require("addmovie.php")
             </form>
         </div>
         <div id="footer">
-
             2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
-
         </div>
     </div>
 </body>

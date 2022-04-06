@@ -31,15 +31,14 @@ else
             $_SESSION['e_txt_pwd']="Podano złe hasło!";
         }
 
-
         $reg="SELECT * FROM $data WHERE Username='$login' AND Password='$pass'";
-        $result = $conn->query($reg);
-        $amount = $result->num_rows;
-
-        if($amount == 0) {
+        $result=$conn->query($reg);
+        $amount=$result->num_rows;
+        if($amount == 0)
+        {
             $working = false;
         }
-
+        
         
         if ($working == true)
         {
@@ -51,11 +50,11 @@ else
             $_SESSION['Username']=$row['Username'];
             if($_SESSION['Username'] == 'admin')
             {
-                header('Location: ../index.php');
+                header('Location: adminpage.php');
             }
             else
             {
-                header('Location: ../index.php');
+                header('Location: userpage.php');
             }
         }
         $conn->close();
