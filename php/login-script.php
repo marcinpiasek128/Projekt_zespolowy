@@ -31,13 +31,15 @@ else
             $_SESSION['e_txt_pwd']="Podano złe hasło!";
         }
 
-        $reg="SELECT * FROM $data WHERE Username='$login' AND Password='$pass'";
-        $result = $conn->query($reg);
-        $amount = $result->num_rows;
 
-        if($amount == 0) {
+        $reg="SELECT * FROM $data WHERE Username='$login' AND Password='$pass'";
+        $result=$conn->query($reg);
+        $amount=$result->num_rows;
+        if($amount == 0)
+        {
             $working = false;
         }
+
         
         if ($working == true)
         {
