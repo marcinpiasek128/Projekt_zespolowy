@@ -10,6 +10,10 @@ require("settings-script.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/login.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/movie.css" />
+    <script src="../script/searchphp.js"></script>
+
 </head>
 
 <body>
@@ -27,7 +31,9 @@ require("settings-script.php");
                 <li><a href="../index.php">Strona Główna</a></li>
                 <li><a href="../php/ranking.php">Ranking</a></li>
                 <li>
-                    <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
+
+                    <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
+
                 </li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)

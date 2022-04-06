@@ -10,6 +10,9 @@ require("php/connect.php")
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/movie.css" />
+    <script src="script/searchindex.js"></script>
+
 </head>
 
 <body>
@@ -27,7 +30,7 @@ require("php/connect.php")
                 <li><a href="index.php">Strona Główna</a></li>
                 <li><a href="php/ranking.php">Ranking</a></li>
                 <li>
-                    <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
+                    <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
@@ -56,6 +59,7 @@ require("php/connect.php")
             </ol>
         </div>
         <div id="content">
+            <?php require_once('php/randommovie.php') ?>
         </div>
         <div id="footer">
             2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
