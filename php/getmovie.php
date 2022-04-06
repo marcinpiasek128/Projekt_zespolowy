@@ -36,7 +36,7 @@
         echo '</div>';
         echo '<div class="row">';
         echo '<div class="leftcolumn">';
-        echo '<img src="../pictures/'.$Poster_picture.'.jpg" alt="movie poster" />';
+        echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Poster_picture).'" />';
         echo '<br />'; 
         echo '<a href="'.$Trailer.'" class="logolink">';
         echo '<img src="../pictures/yt.png" alt="Youtube logo" style="width: 100px;" />';
@@ -75,9 +75,7 @@
             echo '<option value="6">6 - Niezły</option>';
             echo '<option value="7">7 - Dobry</option>';
             echo '<option value="8">8 - Bardzo Dobry</option>';
-
             echo '<option value="9">9 - Rewelacyny</option>';
-
             echo '<option value="10">10 - Arcydzieło!</option>';
             echo '</select>';
             echo '<input type="submit" name="ocen" id="ocen" value="Oceń!" />';

@@ -28,9 +28,7 @@ else {
         $fetchAverage = mysqli_fetch_array($result);
         $averageRating = $fetchAverage['averageRating'];
 
-
         header('Location: ranking.php');
     }
 }
-
 ?>
