@@ -1,6 +1,5 @@
 <?php
-    $query = "SELECT * FROM movies";
-    $result = $conn->query($query);
+
     while($row = $result->fetch_array())
     {
         @$Idmovie = $row['ID_Movie'];
@@ -36,7 +35,7 @@
         echo '</div>';
         echo '<div class="row">';
         echo '<div class="leftcolumn">';
-        echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Poster_picture).'" />';
+        echo '<img src="../pictures/'.$Poster_picture.'.jpg" alt="movie poster" />';
         echo '<br />'; 
         echo '<a href="'.$Trailer.'" class="logolink">';
         echo '<img src="../pictures/yt.png" alt="Youtube logo" style="width: 100px;" />';
@@ -92,4 +91,6 @@
         echo '</div>';
         echo '</div>';
     }
+
+
 ?>

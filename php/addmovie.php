@@ -16,6 +16,7 @@ else
         @$writers=$_POST['txt_writers'];
         @$production=$_POST['txt_production'];
         @$year=$_POST['txt_year'];
+        @$poster_picture=$_POST['txt_poster_picture'];
         @$description=$_POST['txt_description'];
         @$time=$_POST['txt_time'];
         @$trailer=$_POST['txt_trailer'];
@@ -31,20 +32,8 @@ else
         
         if($working == true) 
         {
-            if(!empty($_FILES["image"]["name"])) { 
-                $fileName = basename($_FILES["image"]["name"]); 
-                $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-                $allowTypes = array('jpg'); 
-        
-                if(in_array($fileType, $allowTypes)){ 
-                    $image = $_FILES['image']['tmp_name']; 
-                    $poster_picture = addslashes(file_get_contents($image)); 
-                    $reg="INSERT INTO $movies (Title, Types, Directors, Writers, Production, Years, Poster_picture, Descriptions, WatchTime, Trailer)Values('$title','$type','$directors','$writers','$production','$year','$poster_picture','$description','$time','$trailer')";
-                    $result = $conn->query($reg);
-                    header("Location:adminpage.php");
-                }
-            }
-            
+            $reg="INSERT INTO $movies (Title, Types, Directors, Writers, Production, Years, Poster_picture, Descriptions, WatchTime, Trailer)Values('$title','$type','$directors','$writers','$production','$year','$poster_picture','$description','$time','$trailer')";
+            $result = $conn->query($reg);
         }
     }
 }
