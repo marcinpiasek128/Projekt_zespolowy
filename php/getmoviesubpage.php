@@ -1,6 +1,7 @@
 <?php
-    require('connect.php');
-    $query = "SELECT * FROM movies WHERE Title LIKE '%".$_GET['q']."%'";
+    require("connect.php");
+    $q=$_GET["q"];
+    $query = "SELECT * FROM movies WHERE ID_Movie='$q'";
     $result = $conn->query($query);
     while($row = $result->fetch_array())
     {
@@ -33,9 +34,7 @@
         }        
         echo '<div class="movie">';
         echo '<div class="title">';
-        echo '<a href="movie.php?q='.$Idmovie.'">';
         echo $Title;  
-        echo '</a>';  
         echo '</div>';
         echo '<div class="row">';
         echo '<div class="leftcolumn">';
