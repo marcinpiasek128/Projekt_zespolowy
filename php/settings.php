@@ -1,5 +1,5 @@
 <?php
-require_once("login-script.php");
+require("settings-script.php");
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -29,14 +29,37 @@ require_once("login-script.php");
                 <li>
                     <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
-                <li><a href="../php/login.php">Logowanie</a></li>
+                <?php
+                if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+                {
+                    echo "<li><a href="."#".">".$_SESSION['Username']."</a>
+                        <ul>
+                            <li><a href="?><?php
+                                if($_SESSION['Username']=='admin')
+                                {
+
+                                    echo "adminpage.php";
+                                }
+                                else
+                                {
+                                    echo "userpage.php";
+                                }
+                            ?><?php echo">Profil</a></li>
+                            <li><a href="."settings.php".">Ustawienia</a></li>
+                            <li><a href="."logout.php".">Wyloguj</a></li>
+                            </ul></li>";
+                }
+                else
+                {
+                    echo "<li><a href="."login.php".">Logowanie</a></li>";
+                }
+                ?>
             </ol>
         </div>
         <div id="content">
             <form method="post">
-                <div id="div_login">
-                    <h1>Logowanie</h1>
-                    <div>
+                <h2>Dane Osobowe:</h2>
+                <div>
                         <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Nazwa użytkownika" />
                     </div>
                     <div>
@@ -45,28 +68,8 @@ require_once("login-script.php");
                     <div>
                         <input type="submit" value="Zaloguj" name="but_submit" id="but_submit" />
                     </div>
-                    <div>
-                        <a href="../php/signup.php" class="sign">Załóż konto</a>
-                    </div>
-                    <div>
-
-                        <?php
-                            if(isset($_SESSION['e_txt_uname']))
-                            {
-                                echo '<div class="error">'.$_SESSION['e_txt_uname'].'</div>';
-                                unset($_SESSION['e_txt_uname']);
-                            }
-                        ?>
-                        <?php
-                            if(isset($_SESSION['e_txt_pwd']))
-                            {
-                                echo '<div class="error">'.$_SESSION['e_txt_pwd'].'</div>';
-                                unset($_SESSION['e_txt_pwd']);
-                            }
-                        ?>
-
-                    </div>
-                </div>
+                <hr style="color: #fff">
+                <h2>Zmień Awatar: </h2>
             </form>
         </div>
         <div id="footer">

@@ -1,6 +1,5 @@
 <?php
-session_start();
-require("connect.php")
+require_once("login-script.php");
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -10,6 +9,7 @@ require("connect.php")
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
 </head>
 
 <body>
@@ -37,11 +37,15 @@ require("connect.php")
                             <li><a href="?><?php
                                 if($_SESSION['Username']=='admin')
                                 {
-                                    echo "../index.php";
+
+                                    echo "adminpage.php";
+
+                                    
+
                                 }
                                 else
                                 {
-                                    echo "../index.php";
+                                    echo "userpage.php";
                                 }
                             ?><?php echo">Profil</a></li>
                             <li><a href="."settings.php".">Ustawienia</a></li>
@@ -56,7 +60,11 @@ require("connect.php")
             </ol>
         </div>
         <div id="content">
-            
+            <h2>Dane Osobowe:</h2>
+            <p>Login:</p>
+            <p>Hasło: </p>
+            <hr style="color: #fff">
+            <h2>Zmień Awatar: </h2>
         </div>
         <div id="footer">
             2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.

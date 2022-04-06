@@ -81,7 +81,7 @@ require("signup-script.php");
             </form>
         </div>
         <div id="footer">
-            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
+            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
     </div>
 </body>

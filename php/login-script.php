@@ -30,6 +30,18 @@ else
             $working = false;
             $_SESSION['e_txt_pwd']="Podano złe hasło!";
         }
+<<<<<<< Updated upstream
+=======
+
+        $reg="SELECT * FROM $data WHERE Username='$login' AND Password='$pass'";
+        $result=$conn->query($reg);
+        $amount=$result->num_rows;
+        if($amount == 0)
+        {
+            $working = false;
+        }
+>>>>>>> Stashed changes
+        
         
         if ($working == true)
         {
