@@ -75,7 +75,9 @@
             echo '<option value="6">6 - Niezły</option>';
             echo '<option value="7">7 - Dobry</option>';
             echo '<option value="8">8 - Bardzo Dobry</option>';
+
             echo '<option value="9">9 - Rewelacyny</option>';
+
             echo '<option value="10">10 - Arcydzieło!</option>';
             echo '</select>';
             echo '<input type="submit" name="ocen" id="ocen" value="Oceń!" />';

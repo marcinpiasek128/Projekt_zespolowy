@@ -44,7 +44,6 @@ require("connect.php")
                                     echo "../index.php";
                                 }
                             ?><?php echo">Profil</a></li>
-                            <li><a href="."settings.php".">Ustawienia</a></li>
                             <li><a href="."logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }
@@ -59,7 +58,7 @@ require("connect.php")
             
         </div>
         <div id="footer">
-            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
+            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
     </div>
 </body>
