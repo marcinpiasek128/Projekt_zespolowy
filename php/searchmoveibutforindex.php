@@ -33,7 +33,9 @@
         }        
         echo '<div class="movie">';
         echo '<div class="title">';
+        echo '<a href="php/movie.php?q='.$Idmovie.'">';
         echo $Title;  
+        echo '</a>';  
         echo '</div>';
         echo '<div class="row">';
         echo '<div class="leftcolumn">';
