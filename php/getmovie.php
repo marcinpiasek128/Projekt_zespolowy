@@ -1,6 +1,4 @@
 <?php
-    $query = "SELECT * FROM movies";
-    $result = $conn->query($query);
     while($row = $result->fetch_array())
     {
         @$Idmovie = $row['ID_Movie'];
