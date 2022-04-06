@@ -37,13 +37,14 @@ require("php/connect.php")
                             <li><a href="?><?php
                                 if($_SESSION['Username']=='admin')
                                 {
-                                    echo "index.php";
+                                    echo "php/adminpage.php";
                                 }
                                 else
                                 {
-                                    echo "index.php";
+                                    echo "php/userpage.php";
                                 }
                             ?><?php echo">Profil</a></li>
+                            <li><a href="."php/settings.php".">Ustawienia</a></li>
                             <li><a href="."php/logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }

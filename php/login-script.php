@@ -30,8 +30,7 @@ else
             $working = false;
             $_SESSION['e_txt_pwd']="Podano złe hasło!";
         }
-<<<<<<< Updated upstream
-=======
+
 
         $reg="SELECT * FROM $data WHERE Username='$login' AND Password='$pass'";
         $result=$conn->query($reg);
@@ -40,8 +39,7 @@ else
         {
             $working = false;
         }
->>>>>>> Stashed changes
-        
+
         
         if ($working == true)
         {
@@ -53,11 +51,11 @@ else
             $_SESSION['Username']=$row['Username'];
             if($_SESSION['Username'] == 'admin')
             {
-                header('Location: ../index.php');
+                header('Location: adminpage.php');
             }
             else
             {
-                header('Location: ../index.php');
+                header('Location: userpage.php');
             }
         }
         $conn->close();
