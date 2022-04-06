@@ -31,7 +31,7 @@ if(isset($_POST['but_submit']))
     if(!$cond_passwd)
     {
         $working=false;
-        $_SESSION['e_txt_pwd']="Hasło musi się składać z z jednej litery małej, jednej dużej, cyfry, znaku specjalnego i długość musi wynosić od 8 do 20 znaków!";
+        $_SESSION['e_txt_e_txt_pwd']="Hasło musi się składać z z jednej litery małej, jednej dużej, cyfry, znaku specjalnego i długość musi wynosić od 8 do 20 znaków!";
     }
     
     if($passwd != $confirm)

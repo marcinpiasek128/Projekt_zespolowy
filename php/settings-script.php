@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require("connect.php");
 
@@ -19,7 +18,6 @@ else
             $reg="UPDATE $data SET Username='$login', Password='$haslo' WHERE ID_User='$fajna_zmienna'";
             $result=$conn->query($reg);
         }
-
 
     }
 }
