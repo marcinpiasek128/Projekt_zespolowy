@@ -67,9 +67,7 @@ require_once("login-script.php");
             <h2>Zmień Awatar: </h2>
         </div>
         <div id="footer">
-
-            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
-
+            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
     </div>
 </body>
