@@ -1,7 +1,6 @@
 <?php
 session_start();
-require("connect.php");
-
+require("connect.php")
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -11,7 +10,6 @@ require("connect.php");
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/movie.css" />
 </head>
 
 <body>
@@ -39,11 +37,11 @@ require("connect.php");
                             <li><a href="?><?php
                                 if($_SESSION['Username']=='admin')
                                 {
-                                    echo "adminpage.php";
+                                    echo "../index.php";
                                 }
                                 else
                                 {
-                                    echo "userpage.php";
+                                    echo "../index.php";
                                 }
                             ?><?php echo">Profil</a></li>
                             <li><a href="."logout.php".">Wyloguj</a></li>
@@ -57,23 +55,7 @@ require("connect.php");
             </ol>
         </div>
         <div id="content">
-            <div id="sorting_options">
-                <form method="post">
-                    <label for="gatunek">Gatunek:</label>
-                    <select id="gatunek" name="gatunek">
-                        <option value="0">Horror</option>
-                        <option value="1">Komedia</option>
-                    </select>
-                    <label for="sortuj_po">Sortuj po:</label>
-                    <select id="sortuj_po" name="sortuj_po">
-                        <option value="0">Ocena</option>
-                        <option value="1">Popularność</option>
-                    </select>
-                </form>
-            </div>
-            <?php
-                require("getmovie.php");
-            ?>
+            
         </div>
         <div id="footer">
             2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.

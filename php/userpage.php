@@ -79,7 +79,9 @@ require("connect.php")
                 $result = $conn->query($query);
                 while($row = $result->fetch_array())
                 {                 
-                    $movieid = $row['ID_movie'];
+
+                    $movieid = $row['ID_Movie'];
+
                     $title = $row['Title'];
                     $poster_picture = $row['Poster_picture'];
                     
@@ -114,7 +116,9 @@ require("connect.php")
         </div>
         </div>
         <div id="footer">
-            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
+
+            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
+
         </div>
     </div>
 </body>

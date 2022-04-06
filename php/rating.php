@@ -27,7 +27,10 @@ else {
         $result = mysqli_query($conn,$query) or die(mysqli_error());
         $fetchAverage = mysqli_fetch_array($result);
         $averageRating = $fetchAverage['averageRating'];
+
+
+        header('Location: ranking.php');
     }
 }
-$conn->close();
+
 ?>

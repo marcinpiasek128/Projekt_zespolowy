@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require("connect.php");
 session_start();
 
@@ -12,11 +15,7 @@ else {
         $haslo = $_POST['txt_pwd'];
         $Iduser = $_SESSION['ID_User'];
 
-        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            $reg = "UPDATE $data SET Username='$login', Password='$haslo' WHERE ID_User=$Iduser";
-            $result=$conn->query($reg);
 
-        }
     }
 }
 $conn->close();
