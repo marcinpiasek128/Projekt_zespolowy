@@ -172,9 +172,7 @@ require("connect.php")
             ?>
         </div>
         <div id="footer">
-
-            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
-
+            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
     </div>
 </body>
