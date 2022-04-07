@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require('connect.php');
     $query = "SELECT * FROM movies WHERE Title LIKE '%".$_GET['q']."%'";
     $result = $conn->query($query);
