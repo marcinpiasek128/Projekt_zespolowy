@@ -82,7 +82,7 @@ require("connect.php")
                 {                 
                     $movieid = $row['ID_Movie'];
                     $title = $row['Title'];
-                    $poster_picture = $row['Poster_picture'];
+                    $Poster_picture = $row['Poster_picture'];
                     
                     $query = "SELECT Rate as averageRating FROM rating WHERE ID_Movie='$movieid' AND ID_User=".$user;
                     
@@ -99,7 +99,7 @@ require("connect.php")
                 </div>
                 <div class="row">
                     <div class="leftcolumn" style="width:8%">
-                        <img src="<?php echo $poster_picture; ?>.jpg" alt="movie poster"/>
+                    <?php echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Poster_picture).'" />'; ?>
                     </div>
                     <div class="rightcolumn" style="width:88%">
                        <div class="info">&nbsp;</div>
