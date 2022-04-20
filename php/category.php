@@ -1,4 +1,8 @@
 <?php
+if(!isset($_POST['send'])) {
+$query = "SELECT * FROM movies";
+$result = $conn->query($query);
+include('getmovie.php');}
 if(isset($_POST['send'])) {
     if($_POST['gatunek'] == '0') {
         $query = "SELECT * FROM movies";
