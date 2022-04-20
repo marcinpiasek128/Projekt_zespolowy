@@ -13,7 +13,7 @@
         @$Production  = $row['Production'];
         @$Year = $row['Years'];
         @$Poster_picture = $row['Poster_picture'];
-        @$Description = $row['Description'];
+        @$Description = $row['Descriptions'];
         @$Time = $row['WatchTime'];
         @$Trailer = $row['Trailer'];
         $query = "SELECT ROUND(AVG(Rate),1) as averageRating FROM rating WHERE ID_Movie=".$Idmovie;
@@ -86,12 +86,18 @@
         else{
             echo "Zaloguj się aby ocenić!";
         }
+        
         echo '</div>';
         echo '</div>';
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true )
+        {
+            echo '<a href="comment.php?q='.$q.'" class="comment">Dodaj recenzje!</a>';
+        }
         echo '</div>';
         echo '<div class="description">';
         echo $Description;
         echo '</div>';
+        
         echo '</div>';
     }
 ?>
