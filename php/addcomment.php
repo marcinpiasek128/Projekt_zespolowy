@@ -21,7 +21,7 @@ else {
         }
         else
         {
-            $updatequery = "UPDATE $rating SET Comment=".$comment." WHERE ID_User=".$Iduser." AND ID_Movie=".$Idmovie;
+            $updatequery = "UPDATE $rating SET Comment='$comment' WHERE ID_User='$Iduser' AND ID_Movie='$Idmovie'";
             mysqli_query($conn,$updatequery);   
             header("Location: movie.php?q=$Idmovie");
         }
