@@ -97,7 +97,6 @@
         echo '<div class="description">';
         echo $Description;
         echo '</div>';
-        
         echo '</div>';
     }
 ?>

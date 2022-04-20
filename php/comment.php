@@ -61,7 +61,7 @@ session_start();
             </ol>
         </div>
         <div id="content">
-        <form method="post">
+        <form method="post" action="addcomment.php">
                 <div id="comment">
                     <?php
                          echo '<input value="'.$_GET['q'].'" name="postid" hidden/>';
