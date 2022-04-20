@@ -1,7 +1,16 @@
+:root {
+	--glowny-kolor-tla: #2773e5;
+	--jasniejszy-kolor-tla: #3884f6;
+	--ciemniejszy-kolor-tla: #1662d4;
+	--jeszcze-ciemniejszy-kolor: #0551c3;
+	--tlo: #252525;
+	--stopka-tlo: #131313;
+}
+
 html,
 body {
 	height: 100%;
-	background-color: #242424;
+	background-color: var(--tlo);
 	font-family: "Lato", sans-serif;
 	font-size: 20px;
 	color: #ffffff;
@@ -33,7 +42,7 @@ body {
 a.logolink {
 	text-decoration: none;
 	display: block;
-	color: #c40b05;
+	color: var(--ciemniejszy-kolor-tla);
 }
 
 a > img {
@@ -43,10 +52,10 @@ a > img {
 #navigation {
 	width: 100%;
 	padding: 10px 0;
-	background-color: #e52d27;
+	background-color: var(--glowny-kolor-tla);
 	text-align: center;
-	border-top: 1px solid #c40b05;
-	border-bottom: 1px solid #c40b05;
+	border-top: 1px solid var(--ciemniejszy-kolor-tla);
+	border-bottom: 1px solid var(--ciemniejszy-kolor-tla);
 }
 
 ol {
@@ -71,20 +80,20 @@ ol > li {
 	float: left;
 	width: 285px;
 	height: 40px;
-	border-right: 1px solid #c40b05;
-	background-color: #e52d27;
+	border-right: 1px solid var(--ciemniejszy-kolor-tla);
+	background-color: var(--glowny-kolor-tla);
 }
 
 ol > li:first-child {
-	border-left: 1px solid #c40b05;
+	border-left: 1px solid var(--ciemniejszy-kolor-tla);
 }
 
 ol > li:hover {
-	background-color: #f63e38;
+	background-color: var(--jasniejszy-kolor-tla);
 }
 
 ol > li:hover > a {
-	color: #b30a04;
+	color: var(--jeszcze-ciemniejszy-kolor);
 }
 
 ol > li > ul {
@@ -100,18 +109,18 @@ ol > li:hover > ul {
 }
 
 ol > li > ul > li {
-	background-color: #f63e38;
+	background-color: var(--jasniejszy-kolor-tla);
 	position: relative;
 	z-index: 100;
-	border-top: 1px solid #c40b05;
+	border-top: 1px solid var(--ciemniejszy-kolor-tla);
 }
 
 ol > li > ul > li:hover {
-	background-color: #e52d27;
+	background-color: var(--glowny-kolor-tla);
 }
 
 ol > li > ul > li:hover > a {
-	color: #b30a04;
+	color: var(--jeszcze-ciemniejszy-kolor);
 }
 #navigation input[type="text"] {
 	display: block;
@@ -141,7 +150,7 @@ ol > li > ul > li:hover > a {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: #131313;
+	background-color: var(--stopka-tlo);
 	text-align: center;
 	padding: 10px 0;
 }

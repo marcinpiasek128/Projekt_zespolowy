@@ -1,5 +1,13 @@
+:root {
+	--glowny-kolor-tla: #2773e5;
+	--jasniejszy-kolor-tla: #3884f6;
+	--ciemniejszy-kolor-tla: #1662d4;
+	--jeszcze-ciemniejszy-kolor: #0551c3;
+	--film-tlo: #363636;
+	--rating-tlo: #575757;
+}
 .movie {
-	background-color: #353535;
+	background-color: var(--film-tlo);
 	margin-top: 15px;
 }
 
@@ -8,6 +16,11 @@
 	overflow: hidden;
 	padding: 10px;
 	font-size: 35px;
+}
+
+.title a {
+	text-decoration: none;
+	color: white;
 }
 
 .leftcolumn {
@@ -48,7 +61,7 @@
 	padding: 1%;
 	padding-bottom: 1%;
 	text-align: center;
-	background-color: #575757;
+	background-color: var(--rating-tlo);
 }
 
 .rating h1 {
@@ -60,39 +73,34 @@
 }
 
 #ocen {
-	background-color: #e52d27;
+	background-color: var(--glowny-kolor-tla);
 	border: 0px;
 	color: white;
 	font-size: 20px;
 }
 
 #sorting_options {
-	background-color: #353535;
-	height: 50px;
+	background-color: var(--film-tlo);
+	height: 35px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+	padding: 10px;
 }
-.gatunek {
-	float: left;
-	width: 48%;
-	padding: 1%;
-}
-
-.sortuj {
-	float: left;
-	width: 48%;
-	padding: 1%;
-	text-align: right;
+input[type="submit"] {
+	margin-left: 10px;
+	padding: 6px;
+	background-color: var(--glowny-kolor-tla);
+	border: 0px;
+	color: white;
+	font-size: 20px;
 }
 
 #gatunek {
 	font-size: 20px;
 	width: 180px;
-	text-align: center;
 }
 
 #sortuj_po {
 	font-size: 20px;
 	width: 180px;
-	text-align: center;
 }
