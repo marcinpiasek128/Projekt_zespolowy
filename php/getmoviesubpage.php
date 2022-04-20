@@ -99,4 +99,26 @@
         echo '</div>';
         echo '</div>';
     }
+    echo '<div class="title">';
+    echo 'Recenzje';
+    echo '</div>';
+    $query = "SELECT * FROM $rating WHERE ID_Movie='$q'";
+    $result = $conn->query($query);
+    while($row = $result->fetch_array()){
+        $comment=$row['Comment'];
+        $userid=$row['ID_User'];
+        echo '<div class="movie">';
+        echo '<h2>';
+        $userquery = "SELECT * FROM $data WHERE ID_User='$userid'";
+        $userresult = $conn->query($userquery);
+        while($row2 = $userresult->fetch_array()){
+            $user=$row2['Username'];
+            echo $user;
+        }
+        echo '</h2>';
+        echo '<div class="description">';
+        echo $comment;
+        echo '</div>';
+        echo '</div>';
+    }
 ?>
