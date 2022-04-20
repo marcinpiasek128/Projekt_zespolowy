@@ -12,11 +12,11 @@
         @$Description = $row['Description'];
         @$Time = $row['WatchTime'];
         @$Trailer = $row['Trailer'];
-        $query = "SELECT ROUND(AVG(Rate),1) as averageRating FROM rating WHERE ID_Movie=".$Idmovie;
-        $avgresult = mysqli_query($conn,$query) or die(mysqli_error($conn));
+        $query = "SELECT ROUND(AVG(Rate),1) as averageRating FROM rating WHERE ID_Movie='$Idmovie'";
+        @$avgresult = mysqli_query($conn,$query) or die(mysqli_error($conn));
         $fetchAverage = mysqli_fetch_array($avgresult);
         $averageRating = $fetchAverage['averageRating'];     
-        $query = "SELECT COUNT(*) as numberRatings FROM rating WHERE ID_Movie=".$Idmovie;
+        $query = "SELECT COUNT(*) as numberRatings FROM rating WHERE ID_Movie='$Idmovie'";
         $counteresult = $conn->query($query);
         $fetchnumberRatings = $counteresult->fetch_array();
         $numberRatings = $fetchnumberRatings['numberRatings'];   

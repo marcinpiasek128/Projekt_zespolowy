@@ -66,6 +66,14 @@ require("connect.php");
                         <option value="0"></option>
                         <option value="1">Horror</option>
                         <option value="2">Komedia</option>
+                        <option value="3">Dramat</option>
+                        <option value="4">Sci-Fi</option>
+                        <option value="5">Fantasy</option>
+                        <option value="6">Anime</option>
+                        <option value="7">Akcja</option>
+                        <option value="8">Przygodowy</option>
+                        <option value="9">Wojenny</option>
+                        <option value="10">Historyczny</option>
                     </select>
                     <label for="sortuj_po">Sortuj po:</label>
                     <select id="sortuj_po" name="sortuj_po">
