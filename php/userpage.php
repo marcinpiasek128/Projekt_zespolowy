@@ -72,6 +72,15 @@ require("connect.php")
                     ?>
                 </h1>
             </div>
+
+            <div>
+
+            <?php
+                include("userdetails.php");
+            ?>
+
+            </div>
+
             <div id="rated">
                 <h2>Filmy, które oceniłeś:</h2>
                 <?php
@@ -90,7 +99,7 @@ require("connect.php")
                     $fetchAverage = mysqli_fetch_array($avgresult);
                     $averageRating = $fetchAverage['averageRating'];
                     
-             ?>
+                ?>
             <div class="movie">
                 <div class="title">
                     <?php

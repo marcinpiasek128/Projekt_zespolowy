@@ -95,7 +95,17 @@ session_start();
                     </div>
                 </div>
             </form>
+            <div>
+
+            <?php
+                include("getuser.php");
+            ?>
+            
+            </div>
         </div>
+
+        
+
         <div id="footer">
             2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
