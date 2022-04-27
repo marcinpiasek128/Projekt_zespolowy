@@ -1,17 +1,15 @@
 <?php
 require("connect.php");
-if($conn->connect_errno!=0)
-{
+if($conn->connect_errno!=0) {
     echo "Error: ".$conn->connect_errno;
 }
-else
-{
+else {
     if(isset($_POST['ocen']))
     {
         $Iduser = $_SESSION['ID_User'];
         $Idmovie = $_POST['postid'];
         $rate = $_POST['movieRating'];
-        $result = $conn->query("SELECT * FROM $rating WHERE ID_Movie=".$Idmovie." and ID_User=".$Iduser);
+        $result = $conn->query("SELECT * FROM $rating WHERE ID_Movie='$Idmovie' and ID_User='$Iduser'");
         $ile = $result->num_rows;
         
         if($ile == 0)
@@ -21,11 +19,11 @@ else
         }
         else
         {
-        $updatequery = "UPDATE $rating SET Rate=".$rate." WHERE ID_User=".$Iduser." AND ID_Movie=".$Idmovie;
+        $updatequery = "UPDATE $rating SET Rate='$rate' WHERE ID_User='$Iduser' AND ID_Movie='$Idmovie'";
         mysqli_query($conn,$updatequery);   
         }
         
-        $query = "SELECT ROUND(AVG(Rate),1) as averageRating FROM $rating WHERE ID_Movie=".$Idmovie;
+        $query = "SELECT ROUND(AVG(Rate),1) as averageRating FROM $rating WHERE ID_Movie='$Idmovie'";
         $result = mysqli_query($conn,$query) or die(mysqli_error());
         $fetchAverage = mysqli_fetch_array($result);
         $averageRating = $fetchAverage['averageRating'];

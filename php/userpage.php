@@ -11,13 +11,14 @@ require("connect.php")
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/movie.css" />
+    <script src="../script/searchphp.js"></script>
 </head>
 
 <body>
     <div id="all">
         <div id="header">
             <div id="logo">
-                <a href="index.php" class="logolink">
+                <a href="../index.php" class="logolink">
                     <img src="../pictures/logo.png" alt="bloody hand" />
                     <span class="logotekst1">MOVIEHUB</span>
                 </a>
@@ -28,7 +29,7 @@ require("connect.php")
                 <li><a href="../index.php">Strona Główna</a></li>
                 <li><a href="ranking.php">Ranking</a></li>
                 <li>
-                    <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
+                    <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
@@ -47,6 +48,7 @@ require("connect.php")
                                     echo "userpage.php";
                                 }
                             ?><?php echo">Profil</a></li>
+                            <li><a href="."settings.php".">Ustawienia</a></li>
                             <li><a href="."logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }
@@ -70,6 +72,15 @@ require("connect.php")
                     ?>
                 </h1>
             </div>
+
+            <div>
+
+            <?php
+                include("userdetails.php");
+            ?>
+
+            </div>
+
             <div id="rated">
                 <h2>Filmy, które oceniłeś:</h2>
                 <?php
@@ -78,9 +89,9 @@ require("connect.php")
                 $result = $conn->query($query);
                 while($row = $result->fetch_array())
                 {                 
-                    $movieid = $row['ID_movie'];
+                    $movieid = $row['ID_Movie'];
                     $title = $row['Title'];
-                    $poster_picture = $row['Poster_picture'];
+                    $Poster_picture = $row['Poster_picture'];
                     
                     $query = "SELECT Rate as averageRating FROM rating WHERE ID_Movie='$movieid' AND ID_User=".$user;
                     
@@ -88,7 +99,7 @@ require("connect.php")
                     $fetchAverage = mysqli_fetch_array($avgresult);
                     $averageRating = $fetchAverage['averageRating'];
                     
-             ?>
+                ?>
             <div class="movie">
                 <div class="title">
                     <?php
@@ -97,7 +108,7 @@ require("connect.php")
                 </div>
                 <div class="row">
                     <div class="leftcolumn" style="width:8%">
-                        <img src="<?php echo $poster_picture; ?>.jpg" alt="movie poster"/>
+                    <?php echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Poster_picture).'" />'; ?>
                     </div>
                     <div class="rightcolumn" style="width:88%">
                        <div class="info">&nbsp;</div>
@@ -113,7 +124,7 @@ require("connect.php")
         </div>
         </div>
         <div id="footer">
-            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
+            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
     </div>
 </body>

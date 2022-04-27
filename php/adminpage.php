@@ -1,6 +1,5 @@
 <?php
 session_start();
-require("connect.php")
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -11,6 +10,7 @@ require("connect.php")
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/movie.css" />
+    <script src="../script/searchphp.js"></script>
 </head>
 
 <body>
@@ -28,7 +28,7 @@ require("connect.php")
                 <li><a href="../index.php">Strona Główna</a></li>
                 <li><a href="ranking.php">Ranking</a></li>
                 <li>
-                    <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
+                    <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
@@ -45,6 +45,7 @@ require("connect.php")
                                     echo "userpage.php";
                                 }
                             ?><?php echo">Profil</a></li>
+                            <li><a href="."settings.php".">Ustawienia</a></li>
                             <li><a href="."logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }
@@ -56,7 +57,7 @@ require("connect.php")
             </ol>
         </div>
         <div id="content">
-            <form method="post">
+            <form method="post" action="addmovie.php" enctype="multipart/form-data">
                 <div id="div_login">
                     <h1>Witaj w panelu administratora!</h1>
                     <div>
@@ -78,7 +79,7 @@ require("connect.php")
                         <input type="text" class="textbox" id="txt_year" name="txt_year" placeholder="Rok" />
                     </div>
                     <div>
-                        <input type="file" id="txt_poster_picture" name="txt_poster_picture"/>
+                        <input type="file" id="txt_poster_picture" name="image"/>
                     </div>
                     <div>
                         <textarea id="txt_description" name="txt_description" rows="7" cols="38" placeholder="Opis"></textarea>
@@ -94,9 +95,19 @@ require("connect.php")
                     </div>
                 </div>
             </form>
+            <div>
+
+            <?php
+                include("getuser.php");
+            ?>
+            
+            </div>
         </div>
+
+        
+
         <div id="footer">
-            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
+            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
     </div>
 </body>

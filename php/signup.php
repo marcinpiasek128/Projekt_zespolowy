@@ -10,6 +10,8 @@ require("signup-script.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" type="text/css" href="../css/movie.css" />
+    <script src="../script/searchphp.js"></script>
 </head>
 
 <body>
@@ -27,7 +29,7 @@ require("signup-script.php");
                 <li><a href="../index.php">Strona Główna</a></li>
                 <li><a href="../php/ranking.php">Ranking</a></li>
                 <li>
-                    <input type="text" placeholder="Wpisz aby wyszukać film" id="search">
+                    <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
@@ -46,6 +48,7 @@ require("signup-script.php");
                                     echo "userpage.php";
                                 }
                             ?><?php echo">Profil</a></li>
+                            <li><a href="."settings.php".">Ustawienia</a></li>
                             <li><a href="."logout.php".">Wyloguj</a></li>
                             </ul></li>";
                 }
@@ -105,7 +108,7 @@ require("signup-script.php");
             </form>
         </div>
         <div id="footer">
-            2021&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
+            2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
         </div>
     </div>
 </body>

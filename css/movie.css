@@ -1,5 +1,13 @@
+:root {
+	--glowny-kolor-tla: #2773e5;
+	--jasniejszy-kolor-tla: #3884f6;
+	--ciemniejszy-kolor-tla: #1662d4;
+	--jeszcze-ciemniejszy-kolor: #0551c3;
+	--film-tlo: #363636;
+	--rating-tlo: #575757;
+}
 .movie {
-	background-color: #353535;
+	background-color: var(--film-tlo);
 	margin-top: 15px;
 }
 
@@ -8,6 +16,11 @@
 	overflow: hidden;
 	padding: 10px;
 	font-size: 35px;
+}
+
+.title a {
+	text-decoration: none;
+	color: white;
 }
 
 .leftcolumn {
@@ -48,7 +61,7 @@
 	padding: 1%;
 	padding-bottom: 1%;
 	text-align: center;
-	background-color: #575757;
+	background-color: var(--rating-tlo);
 }
 
 .rating h1 {
@@ -60,8 +73,93 @@
 }
 
 #ocen {
-	background-color: #e52d27;
+	background-color: var(--glowny-kolor-tla);
 	border: 0px;
 	color: white;
 	font-size: 20px;
 }
+
+#sorting_options {
+	background-color: var(--film-tlo);
+	height: 35px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 10px;
+}
+#sorting_options input[type="submit"] {
+	margin-left: 10px;
+	padding: 6px;
+	background-color: var(--glowny-kolor-tla);
+	border: 0px;
+	color: white;
+	font-size: 20px;
+}
+
+#gatunek {
+	font-size: 20px;
+	width: 180px;
+}
+
+#sortuj_po {
+	font-size: 20px;
+	width: 180px;
+}
+.comment {
+	float: right;
+	margin-right: 30px;
+}
+a.comment {
+	padding: 6px;
+	font-size: 20px;
+	width: 100px;
+	color: white;
+	text-decoration: none;
+	background-color: var(--glowny-kolor-tla);
+	text-align: center;
+}
+
+.comment:hover {
+	background-color: var(--jasniejszy-kolor-tla);
+}
+#comment input[type="submit"] {
+	padding: 6px;
+	background-color: var(--glowny-kolor-tla);
+	border: 0px;
+	color: white;
+	font-size: 20px;
+	float: right;
+	margin-right: 10px;
+}
+#txt_comment {
+	font-size: 25px;
+}
+
+/*CSS Lorda*/
+.table {
+    border-collapse: collapse;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
+}
+.table tr {
+    background-color: var(--glowny-kolor-tla);
+    color: #ffffff;
+    text-align: left;
+	border-bottom: 1px solid var(--jasniejszy-kolor-tla);
+}
+.table td, th {
+    padding: 12px 15px;
+}
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.avatar {
+	float: right;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: solid var(--ciemniejszy-kolor-tla);
+	background-color: var(--jasniejszy-kolor-tla);
+  }
+/*Koniec CSS Lorda*/
