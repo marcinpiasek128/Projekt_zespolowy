@@ -13,6 +13,11 @@ require("connect.php");
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/movie.css" />
     <script src="../script/searchphp.js"></script>
+    <script>
+        if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
 </head>
 
 <body>

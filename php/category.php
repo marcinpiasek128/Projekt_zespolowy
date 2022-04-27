@@ -13,7 +13,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -23,7 +23,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -35,7 +35,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Horror' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Horror' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -45,7 +45,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Horror'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Horror'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -58,7 +58,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Komedia' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Komedia' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -68,7 +68,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Komedia'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Komedia'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -81,7 +81,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Dramat' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Dramat' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -91,7 +91,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Dramat'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Dramat'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -104,7 +104,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Sci-Fi' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Sci-Fi' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -114,7 +114,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Sci-Fi'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Sci-Fi'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -127,7 +127,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Fantasy' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Fantasy' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -137,7 +137,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Fantasy'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Fantasy'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -150,7 +150,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Anime' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Anime' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -160,7 +160,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Anime'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Anime'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -173,7 +173,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Akcja' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Akcja' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -183,7 +183,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Akcja'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Akcja'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -196,7 +196,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Przygodowy' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Przygodowy' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -206,7 +206,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Przygodowy'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Przygodowy'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -219,7 +219,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Wojenny' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Wojenny' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -229,7 +229,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Wojenny'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Wojenny'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -242,7 +242,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '1') {
-            $query = "SELECT movies.*,rating.ID_Movie,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Historyczny' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
+            $query = "SELECT movies.*,AVG(Rate) as averageRating FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Historyczny' GROUP BY movies.ID_Movie ORDER BY `averageRating` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
@@ -252,7 +252,7 @@ if(isset($_POST['send'])) {
             include("getmovie.php");
         }
         if($_POST['sortuj_po'] == '3') {
-            $query = "SELECT movies.*,rating.ID_Movie, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Historyczny'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
+            $query = "SELECT movies.*, COUNT(*) as numberRatings FROM movies LEFT JOIN rating on movies.ID_Movie = rating.ID_Movie WHERE movies.Types='Historyczny'  GROUP BY movies.ID_Movie ORDER BY `numberRatings` DESC";
             $result = $conn->query($query);
             include("getmovie.php");
         }
