@@ -93,6 +93,13 @@ require_once("login-script.php");
                                 unset($_SESSION['e_txt_pwd']);
                             }
                         ?>
+                        <?php
+                            if(isset($_SESSION['e_txt_ban']))
+                            {
+                                echo '<div class="error">'.$_SESSION['e_txt_ban'].'</div>';
+                                unset($_SESSION['e_txt_ban']);
+                            }
+                        ?>
 
                     </div>
                 </div>

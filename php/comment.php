@@ -72,6 +72,13 @@ session_start();
                     <div>
                         <input type="submit" value="Dodaj!" name="but_submit" id="but_submit" />
                     </div>
+                    <?php
+                        if(isset($_SESSION['e_txt_wulg']))
+                        {
+                            echo '<div class="error">'.$_SESSION['e_txt_wulg'].'</div>';
+                            unset($_SESSION['e_txt_wulg']);
+                        }
+                    ?>
                 </div>
             </form>
         </div>

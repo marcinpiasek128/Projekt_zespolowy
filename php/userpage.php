@@ -80,7 +80,7 @@ require("connect.php")
             ?>
 
             </div>
-
+                        <br><br><br><br><br>
             <div id="rated">
                 <h2>Filmy, które oceniłeś:</h2>
                 <?php
