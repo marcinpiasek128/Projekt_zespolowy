@@ -70,12 +70,14 @@
                 echo "</td>";
                 echo "<td>";
                     echo "<form action='ban.php' method='POST'>";
-                        echo "<input type='submit' value='Zablokuj $row[Username]' name='block'>";
+                        echo "<input value='$row[ID_User]' name='block' hidden/>";
+                        echo "<input type='submit' value='Zablokuj $row[Username]'>";
                     echo "</form>";
                 echo "</td>";
                 echo "<td>";
                 echo "<form action='unban.php' method='POST'>";
-                    echo "<input type='submit' value='Odblokuj $row[Username]' name='unblock'>";
+                    echo "<input value='$row[ID_User]' name='unblock' hidden/>";
+                    echo "<input type='submit' value='Odblokuj $row[Username]' >";
                 echo "</form>";
                 echo "</td>";
             echo "</tr>";
