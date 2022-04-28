@@ -23,7 +23,9 @@ while($row = $result->fetch_array())
     echo '</div>';
     echo '<div class="rightcolumn" style="width:50%;">';
     echo '<div class="info">&nbsp;</div>';
-    echo '<h1>Ilość Recenzi: '.$recenzja.'</h1>';
+
+    echo '<h1>Ilość Recenzji: '.$recenzja.'</h1>';
+
     echo '<h1>Ilość obejrzanych minut: '.$hours.'</h1>';
     echo '</div>';
     echo '</div>';
