@@ -103,11 +103,13 @@
     echo 'Recenzje';
     echo '</div>';
 
+
     if(isset($_SESSION['e_txt_comm_insert_update']))
     {
         echo '<div class="error">'.$_SESSION['e_txt_comm_insert_update'].'</div>';
         unset($_SESSION['e_txt_comm_insert_update']);
     }
+
 
     $commentquery = "SELECT * FROM $rating WHERE ID_Movie='$q' AND Comment!=''";
     $result = $conn->query($commentquery);
