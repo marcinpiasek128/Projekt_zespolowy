@@ -108,7 +108,9 @@ require("connect.php")
             <div class="movie">
                 <div class="title">
                     <?php
-                        echo $title;
+                        echo '<a href="movie.php?q='.$movieid.'">';
+                        echo $title;  
+                        echo '</a>';
                     ?>
                 </div>
                 <div class="row">

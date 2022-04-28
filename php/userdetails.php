@@ -18,7 +18,10 @@
     echo "<table class='table'>";
         echo "<tr>";
             echo "<th>";
-                echo "Liczba godzin";
+                echo "Liczba minut";
+            echo "</th>";
+            echo "<th>";
+                echo "Liczba recenzji";
             echo "</th>";
             echo "<th>";
                 echo "Aktualna rola";
@@ -34,6 +37,14 @@
                 echo "<td>";
                     echo $row["Hours"];
                 echo "</td>";
+                echo "<td>";
+                $req = "SELECT COUNT(*) as liczbarecenzji FROM rating WHERE ID_User='$row[ID_User]' AND Comment!=''";
+                $res = $conn->query($req);
+                $row2 = $res->fetch_array();
+                $recenzja=$row2['liczbarecenzji'];
+                    echo $recenzja;
+                echo "</td>";
+                
                 echo "<td>";
                     echo $row["Rank"];
                 echo "</td>";
