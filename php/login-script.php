@@ -38,8 +38,17 @@ else
         {
             $working = false;
         }
-        
-        
+
+        $sql = "SELECT ban FROM data WHERE Username='$login' AND Password='$pass'";
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc()) {
+            if($row["ban"] == 1)
+            {
+                $working = false;
+                $_SESSION['e_txt_ban']="Konto zablokowane!";
+            }
+        }
+
         if ($working == true)
         {
             $_SESSION['loggedin']=true;
@@ -48,6 +57,7 @@ else
             $row=$res->fetch_assoc();
             $_SESSION['ID_User']=$row['ID_User'];
             $_SESSION['Username']=$row['Username'];
+            
             if($_SESSION['Username'] == 'admin')
             {
                 header('Location: adminpage.php');
@@ -60,6 +70,4 @@ else
         $conn->close();
     }
 }
-
-
 ?>

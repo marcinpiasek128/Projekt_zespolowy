@@ -1,7 +1,15 @@
 <?php
     require("connect.php");
 
-    echo "<img src='../pictures/logo.png' class='avatar'>";
+    $x = $_SESSION['ID_User'];
+    $query = "SELECT Picture FROM data WHERE ID_User='$x'";
+    $result = $conn->query($query);
+
+    while($row = $result->fetch_array())
+    {
+        @$avatar = $row['Picture'];
+    }
+    echo '<img class="avatar" src="data:image/jpg;charset=utf8;base64,'.base64_encode($avatar).'" />';
 
     $x = $_SESSION['Username'];       
     $sql = "SELECT * FROM data WHERE Username='$x'";

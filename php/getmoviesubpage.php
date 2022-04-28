@@ -102,8 +102,17 @@
     echo '<div class="title">';
     echo 'Recenzje';
     echo '</div>';
-    $query = "SELECT * FROM $rating WHERE ID_Movie='$q'";
-    $result = $conn->query($query);
+
+
+    if(isset($_SESSION['e_txt_comm_insert_update']))
+    {
+        echo '<div class="error">'.$_SESSION['e_txt_comm_insert_update'].'</div>';
+        unset($_SESSION['e_txt_comm_insert_update']);
+    }
+
+
+    $commentquery = "SELECT * FROM $rating WHERE ID_Movie='$q' AND Comment!=''";
+    $result = $conn->query($commentquery);
     while($row = $result->fetch_array()){
         $comment=$row['Comment'];
         $userid=$row['ID_User'];
@@ -119,6 +128,18 @@
         echo '<div class="description">';
         echo $comment;
         echo '</div>';
+        
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+        {
+            if($_SESSION['Username']=='admin'){
+                echo '<form method="post">';
+                require_once('deletecomment.php');
+                echo '<input value="'.$Idmovie.'" name="movieid" id="movieid" hidden/>';
+                echo '<input value="'.$userid.'" name="userid" id="movieid" hidden/>';
+                echo '<input type="submit" name="deletecomment" id="ocen" value="Usuń" />';
+                echo '</form>';
+            }   
+        }
         echo '</div>';
     }
 ?>

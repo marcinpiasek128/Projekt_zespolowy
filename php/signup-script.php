@@ -60,7 +60,7 @@ if(isset($_POST['but_submit']))
     
     if($working == true)
     {
-        $reg="INSERT INTO $data (Username, Email, Password) Values('$login','$email','$passwd')";
+        $reg="INSERT INTO $data (Username, Email, Password) Values('$login','$email','$passwd',)";
         $res = mysqli_query($conn,$reg);
         echo '<script>alert("Gratulacje "+$login"+! Rejestracja przebiegła pomyślnie. Możesz już zalogować się na swoje konto!")</script>';
     }
