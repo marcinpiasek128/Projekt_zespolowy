@@ -31,7 +31,14 @@ session_start();
         <div id="navigation">
             <ol>
                 <li><a href="../index.php">Strona Główna</a></li>
-                <li><a href="../php/ranking.php">Ranking</a></li>
+
+                <li><a href="ranking.php">Ranking</a>
+                    <ul>
+                        <li><a href="ranking.php">Filmy</a>
+                        <li><a href="userranking.php">Użytkownicy</a>
+                    </ul>
+                </li>
+
                 <li>
                     <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
@@ -64,32 +71,21 @@ session_start();
         <div id="content">
             <div id="sorting_options">
                 <form method="post">
-                    <label for="gatunek">Gatunek:</label>
-                    <select id="gatunek" name="gatunek">
-                        <option value="0"></option>
-                        <option value="1">Horror</option>
-                        <option value="2">Komedia</option>
-                        <option value="3">Dramat</option>
-                        <option value="4">Sci-Fi</option>
-                        <option value="5">Fantasy</option>
-                        <option value="6">Anime</option>
-                        <option value="7">Akcja</option>
-                        <option value="8">Przygodowy</option>
-                        <option value="9">Wojenny</option>
-                        <option value="10">Historyczny</option>
-                    </select>
+
                     <label for="sortuj_po">Sortuj po:</label>
                     <select id="sortuj_po" name="sortuj_po">
                         <option value="0"></option>
-                        <option value="1">Ocena</option>
-                        <option value="2">Alfabetycznie</option>
-                        <option value="3">Popularność</option>
+                        <option value="1">Godziny</option>
+                        <option value="2">Recenzje</option>
+
                     </select>
                     <input type="submit" name="send" value="Zatwierdź">
                 </form>
             </div>
             <?php
-                require("category.php");
+
+                require("getuserforranking.php");
+
             ?>
         </div>
         <div id="footer">

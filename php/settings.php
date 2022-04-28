@@ -27,7 +27,12 @@ require("settings-script.php");
         <div id="navigation">
             <ol>
                 <li><a href="../index.php">Strona Główna</a></li>
-                <li><a href="../php/ranking.php">Ranking</a></li>
+                <li><a href="ranking.php">Ranking</a>
+                    <ul>
+                        <li><a href="ranking.php">Filmy</a>
+                        <li><a href="userranking.php">Użytkownicy</a>
+                    </ul>
+                </li>
                 <li>
                     <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
@@ -76,6 +81,7 @@ require("settings-script.php");
                 
 
                 ?>
+
             </form>
 
             <h2>Zmień Awatar:</h2>
@@ -101,6 +107,7 @@ require("settings-script.php");
                     <input type="submit" value="Zmień avatar!" name="but_submit" id="but_submit" />
                 </div>
             </form>
+
 
         </div>
         <div id="footer">
