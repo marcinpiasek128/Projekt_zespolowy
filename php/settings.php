@@ -74,7 +74,7 @@ require("settings-script.php");
                     </div>
                     <br>
                     <div>
-                        <input type="submit" value="Zaloguj" name="but_submit" id="ocen" />
+                        <input type="submit" value="Zmień dane" name="but_submit" id="ocen" />
                     </div>
                 <hr style="color: #fff">
                 

@@ -17,10 +17,10 @@
                 echo "Email";
             echo "</th>";
             echo "<th>";
-                echo "Hasło";
+                echo "Recenzje";
             echo "</th>";
             echo "<th>";
-                echo "Godziny";
+                echo "Minuty";
             echo "</th>";
             echo "<th>";
                 echo "Rola";
@@ -49,7 +49,13 @@
                     echo $row["Email"];
                 echo "</td>";
                 echo "<td>";
-                    echo $row["Password"];
+                
+                $req = "SELECT COUNT(*) as liczbarecenzji FROM rating WHERE ID_User='$row[ID_User]' AND Comment!=''";
+                $res = $conn->query($req);
+                $row2 = $res->fetch_array();
+                $recenzja=$row2['liczbarecenzji'];
+                echo $recenzja;
+                
                 echo "</td>";
                 echo "<td>";
                     echo $row["Hours"];
