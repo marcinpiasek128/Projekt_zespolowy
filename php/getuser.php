@@ -63,14 +63,14 @@
                     echo "</button>";
                 echo "</td>";
                 echo "<td>";
-                    echo "<button>";
-                        echo "Zablokuj";
-                    echo "</button>";
+                    echo "<form action='ban.php' method='POST'>";
+                        echo "<input type='submit' value='$row[ID_User]' name='block'>";
+                    echo "</form>";
                 echo "</td>";
                 echo "<td>";
-                    echo "<button>";
-                        echo "Odblokuj";
-                    echo "</button>";
+                echo "<form action='unban.php' method='POST'>";
+                    echo "<input type='submit' value='$row[ID_User]' name='unblock'>";
+                echo "</form>";
                 echo "</td>";
             echo "</tr>";
         }
