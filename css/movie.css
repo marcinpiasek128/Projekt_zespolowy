@@ -204,9 +204,7 @@ table thead tr {
 	border: solid var(--ciemniejszy-kolor-tla);
 	background-color: var(--jasniejszy-kolor-tla);
 }
-
 #avatar {
 	float: left;
 }
 /*Koniec CSS Lorda*/
-

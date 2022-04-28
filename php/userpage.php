@@ -116,7 +116,20 @@ require("connect.php")
                     <?php echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Poster_picture).'" />'; ?>
                     </div>
                     <div class="rightcolumn" style="width:88%">
-                       <div class="info">&nbsp;</div>
+                       <div class="info">&nbsp;
+                       <form method="post">
+                       <input value="<?php echo $movieid;?>" name="movieid" hidden/>
+                       <input value="<?php echo $userid;?>" name="userid" hidden/>
+                        <label for="timeswatched">Ile razy obejrzano:</label>
+                        <select id="timeswatched" name="timeswatched">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3+</option>
+                            <option value="0">Porzucono</option>
+                        </select>
+                        <input id="ocen" type="submit" name="updatestatus" value="Zaktualizuj informacje">
+                        </form>
+                       </div>
                        <div class="rating">
                             <h1>Wystawiona ocena: <?php echo $averageRating; ?>/10</h1>
                         </div>

@@ -64,12 +64,12 @@
                 echo "</td>";
                 echo "<td>";
                     echo "<form action='ban.php' method='POST'>";
-                        echo "<input type='submit' value='$row[ID_User]' name='block'>";
+                        echo "<input type='submit' value='Zablokuj $row[Username]' name='block'>";
                     echo "</form>";
                 echo "</td>";
                 echo "<td>";
                 echo "<form action='unban.php' method='POST'>";
-                    echo "<input type='submit' value='$row[ID_User]' name='unblock'>";
+                    echo "<input type='submit' value='Odblokuj $row[Username]' name='unblock'>";
                 echo "</form>";
                 echo "</td>";
             echo "</tr>";
