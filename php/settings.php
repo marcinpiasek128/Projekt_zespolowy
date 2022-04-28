@@ -81,6 +81,7 @@ require("settings-script.php");
                 
 
                 ?>
+
             </form>
 
             <h2>Zmień Awatar:</h2>
@@ -106,6 +107,7 @@ require("settings-script.php");
                     <input type="submit" value="Zmień avatar!" name="but_submit" id="but_submit" />
                 </div>
             </form>
+
 
         </div>
         <div id="footer">
