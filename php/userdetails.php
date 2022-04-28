@@ -11,20 +11,26 @@
     }
     echo '<img class="avatar" src="data:image/jpg;charset=utf8;base64,'.base64_encode($avatar).'" />';
 
-    $x = $_SESSION['Username'];       
-    $sql = "SELECT * FROM data WHERE Username='$x'";
+    $xusername = $_SESSION['Username'];       
+    $sql = "SELECT * FROM data WHERE Username='$xusername'";
     $result = $conn->query($sql);
 
     echo "<table class='table'>";
         echo "<tr>";
             echo "<th>";
-                echo "Liczba minut";
+                echo "Obejrzanych";
             echo "</th>";
             echo "<th>";
-                echo "Liczba recenzji";
+                echo "Porzuconych";
             echo "</th>";
             echo "<th>";
-                echo "Aktualna rola";
+                echo "Minut";
+            echo "</th>";
+            echo "<th>";
+                echo "Recenzji";
+            echo "</th>";
+            echo "<th>";
+                echo "Rola";
             echo "</th>";
             echo "<th>";
                 echo "Możesz zostać recenzentem";
@@ -33,7 +39,21 @@
     
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
+            $sqlobejrzanych = "SELECT COUNT(*) as obejrzanych FROM $rating WHERE ID_User='$x' AND Status>=1";
+            $resultobejrzanych = $conn->query($sqlobejrzanych);
+            $wynikobejrzanych = $resultobejrzanych->fetch_assoc();
+            $obejrzanych=$wynikobejrzanych["obejrzanych"];
+            $sqlporzuconych = "SELECT COUNT(*) as porzuconych FROM $rating WHERE ID_User='$x' AND Status=0";
+            $resultporzuconych = $conn->query($sqlporzuconych);
+            $wynikporzuconych = $resultporzuconych->fetch_assoc();
+            $porzuconych=$wynikporzuconych["porzuconych"];
             echo "<tr>";
+                echo "<td>";
+                   echo $obejrzanych;
+                echo "</td>";
+                echo "<td>";
+                    echo $porzuconych;
+                echo "</td>";
                 echo "<td>";
                     echo $row["Hours"];
                 echo "</td>";
