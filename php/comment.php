@@ -26,7 +26,12 @@ session_start();
         <div id="navigation">
             <ol>
                 <li><a href="../index.php">Strona Główna</a></li>
-                <li><a href="../php/ranking.php">Ranking</a></li>
+                <li><a href="ranking.php">Ranking</a>
+                    <ul>
+                        <li><a href="ranking.php">Filmy</a>
+                        <li><a href="userranking.php">Użytkownicy</a>
+                    </ul>
+                </li>
                 <li>
                     <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
@@ -72,6 +77,13 @@ session_start();
                     <div>
                         <input type="submit" value="Dodaj!" name="but_submit" id="but_submit" />
                     </div>
+                    <?php
+                        if(isset($_SESSION['e_txt_wulg']))
+                        {
+                            echo '<div class="error">'.$_SESSION['e_txt_wulg'].'</div>';
+                            unset($_SESSION['e_txt_wulg']);
+                        }
+                    ?>
                 </div>
             </form>
         </div>

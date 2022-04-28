@@ -177,30 +177,34 @@ a.comment {
 
 /*CSS Lorda*/
 .table {
-    border-collapse: collapse;
-    margin: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
+	border-collapse: collapse;
+	margin: auto;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 .table tr {
-    background-color: var(--glowny-kolor-tla);
-    color: #ffffff;
-    text-align: left;
+	background-color: var(--glowny-kolor-tla);
+	color: #ffffff;
+	text-align: left;
 	border-bottom: 1px solid var(--jasniejszy-kolor-tla);
 }
-.table td, th {
-    padding: 12px 15px;
+.table td,
+th {
+	padding: 12px 15px;
 }
 table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
 }
 .avatar {
 	float: right;
 	width: 200px;
-	height: 200px;
+	min-height: 200px;
 	border-radius: 50%;
 	border: solid var(--ciemniejszy-kolor-tla);
 	background-color: var(--jasniejszy-kolor-tla);
-  }
+}
+#avatar {
+	float: left;
+}
 /*Koniec CSS Lorda*/
