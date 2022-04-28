@@ -14,14 +14,12 @@ else {
         
         if($ile == 0)
         {
-            $insertquery = "INSERT INTO $rating (ID_User, ID_Movie, Rate) values ('$Iduser','$Idmovie','$rate')";
+            $insertquery = "INSERT INTO $rating (ID_User, ID_Movie, Rate, Status) values ('$Iduser','$Idmovie','$rate','1')";
             mysqli_query($conn,$insertquery);
-
             $select = "SELECT WatchTime FROM $movies WHERE ID_Movie='$Idmovie'";
             $resselect = $conn->query($select);
             $resquery = $resselect->fetch_array();
             $test = "UPDATE $data SET Hours=Hours+'$resquery[0]' WHERE data.ID_User='$Iduser'";
-
             mysqli_query($conn,$test);
         }
         else

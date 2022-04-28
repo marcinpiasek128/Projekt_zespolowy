@@ -72,8 +72,9 @@ require("settings-script.php");
                     <div>
                         <input type="password" class="textbox" id="txt_pwd" name="txt_pwd" placeholder="Hasło" />
                     </div>
+                    <br>
                     <div>
-                        <input type="submit" value="Zaloguj" name="but_submit" id="but_submit" />
+                        <input type="submit" value="Zaloguj" name="but_submit" id="ocen" />
                     </div>
                 <hr style="color: #fff">
                 
@@ -81,7 +82,6 @@ require("settings-script.php");
                 
 
                 ?>
-
             </form>
 
             <h2>Zmień Awatar:</h2>
@@ -103,11 +103,11 @@ require("settings-script.php");
                 <div>
                     <input type="file" id="txt_poster_picture" name="image"/>
                 </div>
+                <br>
                 <div>
-                    <input type="submit" value="Zmień avatar!" name="but_submit" id="but_submit" />
+                    <input type="submit" value="Zmień avatar!" name="but_submit" id="ocen" />
                 </div>
             </form>
-
 
         </div>
         <div id="footer">

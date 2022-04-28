@@ -95,11 +95,13 @@ session_start();
                     <div>
                         <input type="text" class="textbox" id="txt_trailer" name="txt_trailer" placeholder="Link do trailera" />
                     </div>
+                    <br>
                     <div>
-                        <input type="submit" value="Dodaj!" name="but_submit" id="but_submit" />
+                        <input type="submit" value="Dodaj!" name="but_submit" id="ocen" />
                     </div>
                 </div>
             </form>
+            <br>
             <div>
 
             <?php
