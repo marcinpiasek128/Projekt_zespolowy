@@ -71,8 +71,37 @@ require("settings-script.php");
                         <input type="submit" value="Zaloguj" name="but_submit" id="but_submit" />
                     </div>
                 <hr style="color: #fff">
-                <h2>Zmień Awatar: </h2>
+                
+                <?php
+                
+
+                ?>
             </form>
+
+            <h2>Zmień Awatar:</h2>
+
+            <?php
+                require("connect.php");
+                $x = $_SESSION['ID_User'];
+                $query = "SELECT Picture FROM data WHERE ID_User='$x'";
+                $result = $conn->query($query);
+
+                while($row = $result->fetch_array())
+                {
+                    @$avatar = $row['Picture'];
+                }
+                echo '<img class="avatar" id="avatar" src="data:image/jpg;charset=utf8;base64,'.base64_encode($avatar).'" /> <br><br><br><br><br><br><br><br><br>';
+            ?>
+
+            <form method="post" action="changeavatar.php" enctype="multipart/form-data">
+                <div>
+                    <input type="file" id="txt_poster_picture" name="image"/>
+                </div>
+                <div>
+                    <input type="submit" value="Zmień avatar!" name="but_submit" id="but_submit" />
+                </div>
+            </form>
+
         </div>
         <div id="footer">
             2022&copy;Marcin Piasek, Dawid Piątek &amp; Dawid Jabłoński. Wszelkie prawa zastrzeżone.
