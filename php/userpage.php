@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("connect.php")
+require("connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="PL-pl">
@@ -98,11 +98,12 @@ require("connect.php")
                     $title = $row['Title'];
                     $Poster_picture = $row['Poster_picture'];
                     
-                    $query = "SELECT Rate as averageRating FROM rating WHERE ID_Movie='$movieid' AND ID_User=".$user;
+                    $query = "SELECT Rate as averageRating, Status FROM rating WHERE ID_Movie='$movieid' AND ID_User=".$user;
                     
                     $avgresult = mysqli_query($conn,$query) or die(mysqli_error($conn));
                     $fetchAverage = mysqli_fetch_array($avgresult);
                     $averageRating = $fetchAverage['averageRating'];
+                    $status = $fetchAverage['Status'];
                     
                 ?>
             <div class="movie">
@@ -118,10 +119,27 @@ require("connect.php")
                     <?php echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Poster_picture).'" />'; ?>
                     </div>
                     <div class="rightcolumn" style="width:88%">
-                       <div class="info">&nbsp;
+                       <div class="info">
+                           STATUS:
+                           <?php
+                                if($status == 0){
+                                    echo 'Porzucono';
+                                }
+                                else if($status == 1){
+                                    echo 'Obejrzano';
+                                }
+                                else if($status == 3){
+                                    echo 'Obejrzano '.$status.'+ razy';
+                                }
+                                else{
+                                    echo 'Obejrzano '.$status.' razy';
+                                }
+                           ?>
+                           <br><br>
                        <form method="post">
+                           <?php require_once("updatestatus.php"); ?>
                        <input value="<?php echo $movieid;?>" name="movieid" hidden/>
-                       <input value="<?php echo $userid;?>" name="userid" hidden/>
+                       <input value="<?php echo $user;?>" name="userid" hidden/>
                         <label for="timeswatched">Ile razy obejrzano:</label>
                         <select id="timeswatched" name="timeswatched">
                             <option value="1">1</option>

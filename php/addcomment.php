@@ -13,7 +13,7 @@ else {
 
         $filter = $comment;
         $filter = implode(" ", $_POST);
-        $keywords = array('ptrek','chuj','huj','dziwka','pizda','czarnuch','jebać','pierdolić','komunizm','kutas');
+        $keywords = array('ptrek','nazista','komunista','mitoman','knur');
 
         $working = true;
 
