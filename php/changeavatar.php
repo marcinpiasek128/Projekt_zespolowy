@@ -3,6 +3,7 @@ require("connect.php");
 session_start();
 $x = $_SESSION['ID_User'];
 
+
 if(!empty($_FILES["image"]["name"])) { 
     $fileName = basename($_FILES["image"]["name"]); 
     $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 

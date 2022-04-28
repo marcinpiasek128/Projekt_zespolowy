@@ -4,6 +4,7 @@ $query = "SELECT * FROM data";
 $result = $conn->query($query);
 while($row = $result->fetch_array())
 {
+
     $userid=$row['ID_User'];
     $user=$row['Username'];
     $hours=$row["Hours"];
@@ -27,5 +28,6 @@ while($row = $result->fetch_array())
     echo '</div>';
     echo '</div>';
     echo '</div>';
+
 }
 ?>
