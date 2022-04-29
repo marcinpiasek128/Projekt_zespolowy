@@ -34,6 +34,7 @@
             echo "</th>";
             echo "<th>";
                 echo "Zaproponuj nowy film";
+
             echo "</th>";
             echo "<th>";
                 echo "Możesz zostać recenzentem";
@@ -67,6 +68,7 @@
                 $recenzja=$row2['liczbarecenzji'];
                     echo $recenzja;
                 echo "</td>";
+
                 echo "<td>";
                     echo $row["Rank"];
                 echo "</td>";
