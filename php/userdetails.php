@@ -33,6 +33,10 @@
                 echo "Rola";
             echo "</th>";
             echo "<th>";
+                echo "Zaproponuj nowy film";
+
+            echo "</th>";
+            echo "<th>";
                 echo "Możesz zostać recenzentem";
             echo "</th>";
         echo "</tr>";
@@ -64,9 +68,14 @@
                 $recenzja=$row2['liczbarecenzji'];
                     echo $recenzja;
                 echo "</td>";
-                
+
                 echo "<td>";
                     echo $row["Rank"];
+                echo "</td>";
+                echo "<td>";
+                    echo "<form method='post' action='movierequest.php' enctype='multipart/form-data'>";
+                        echo "<input type='submit' value='Dodaj!' name='but_submit' />";
+                    echo "</form>";
                 echo "</td>";
                 echo "<td>";
                     echo "<center><button>";
@@ -82,4 +91,9 @@
 
     
     echo "</table>";
+    if(isset($_SESSION['e_txt_request_added']))
+        {
+            echo '<div class="error">'.$_SESSION['e_txt_request_added'].'</div>';
+            unset($_SESSION['e_txt_request_added']);
+        }
 ?>

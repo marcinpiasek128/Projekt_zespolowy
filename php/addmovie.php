@@ -39,7 +39,7 @@ else
                 if(in_array($fileType, $allowTypes)){ 
                     $image = $_FILES['image']['tmp_name']; 
                     $poster_picture = addslashes(file_get_contents($image)); 
-                    $reg="INSERT INTO $movies (Title, Types, Directors, Writers, Production, Years, Poster_picture, Descriptions, WatchTime, Trailer)Values('$title','$type','$directors','$writers','$production','$year','$poster_picture','$description','$time','$trailer')";
+                    $reg="INSERT INTO $movies (Title, Types, Directors, Writers, Production, Years, Poster_picture, Descriptions, WatchTime, Trailer, is_accepted)Values('$title','$type','$directors','$writers','$production','$year','$poster_picture','$description','$time','$trailer','1')";
                     $result = $conn->query($reg);
                     header("Location:adminpage.php");
                 }
