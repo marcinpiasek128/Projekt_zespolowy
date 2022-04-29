@@ -17,10 +17,10 @@
                 echo "Email";
             echo "</th>";
             echo "<th>";
-                echo "Hasło";
+                echo "Recenzje";
             echo "</th>";
             echo "<th>";
-                echo "Godziny";
+                echo "Minuty";
             echo "</th>";
             echo "<th>";
                 echo "Rola";
@@ -49,7 +49,13 @@
                     echo $row["Email"];
                 echo "</td>";
                 echo "<td>";
-                    echo $row["Password"];
+                
+                $req = "SELECT COUNT(*) as liczbarecenzji FROM rating WHERE ID_User='$row[ID_User]' AND Comment!=''";
+                $res = $conn->query($req);
+                $row2 = $res->fetch_array();
+                $recenzja=$row2['liczbarecenzji'];
+                echo $recenzja;
+                
                 echo "</td>";
                 echo "<td>";
                     echo $row["Hours"];
@@ -64,12 +70,14 @@
                 echo "</td>";
                 echo "<td>";
                     echo "<form action='ban.php' method='POST'>";
-                        echo "<input type='submit' value='$row[ID_User]' name='block'>";
+                        echo "<input value='$row[ID_User]' name='block' hidden/>";
+                        echo "<input type='submit' value='Zablokuj $row[Username]'>";
                     echo "</form>";
                 echo "</td>";
                 echo "<td>";
                 echo "<form action='unban.php' method='POST'>";
-                    echo "<input type='submit' value='$row[ID_User]' name='unblock'>";
+                    echo "<input value='$row[ID_User]' name='unblock' hidden/>";
+                    echo "<input type='submit' value='Odblokuj $row[Username]' >";
                 echo "</form>";
                 echo "</td>";
             echo "</tr>";

@@ -10,6 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/movie.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
     <script src="../script/searchphp.js"></script>
 </head>
 
@@ -95,16 +96,23 @@ session_start();
                     <div>
                         <input type="text" class="textbox" id="txt_trailer" name="txt_trailer" placeholder="Link do trailera" />
                     </div>
+                    <br>
                     <div>
-                        <input type="submit" value="Dodaj!" name="but_submit" id="but_submit" />
+                        <input type="submit" value="Dodaj!" name="but_submit" id="ocen" />
                     </div>
                 </div>
             </form>
+            <br>
             <div>
 
             <?php
                 include("getuser.php");
             ?>
+
+            <?php
+                require("category_adminpage.php");
+            ?>
+            
             
             </div>
         </div>

@@ -4,7 +4,7 @@ require("connect.php");
     $countresult = $conn->query($query);
     $fetchnumberPosts = $countresult->fetch_array();
     $numberPosts = $fetchnumberPosts['numberPosts'];
-    $losuj =rand ( 1 , $numberPosts );
+    $losuj =rand ( 1 , 65 );
     $query = "SELECT * FROM movies WHERE ID_Movie=".$losuj;
     $result = $conn->query($query);
     while($row = $result->fetch_array())
