@@ -79,7 +79,7 @@ session_start();
                 </form>
             </div>
             <?php
-                require("getuserforranking.php");
+                require("getuserranking.php");
             ?>
         </div>
         <div id="footer">
