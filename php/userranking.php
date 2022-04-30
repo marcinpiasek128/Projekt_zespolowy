@@ -31,14 +31,12 @@ session_start();
         <div id="navigation">
             <ol>
                 <li><a href="../index.php">Strona Główna</a></li>
-
                 <li><a href="ranking.php">Ranking</a>
                     <ul>
                         <li><a href="ranking.php">Filmy</a>
                         <li><a href="userranking.php">Użytkownicy</a>
                     </ul>
                 </li>
-
                 <li>
                     <input onkeyup="showMovie(this.value)" type="text" placeholder="Wpisz aby wyszukać film" id="search">
                 </li>
@@ -71,21 +69,17 @@ session_start();
         <div id="content">
             <div id="sorting_options">
                 <form method="post">
-
                     <label for="sortuj_po">Sortuj po:</label>
                     <select id="sortuj_po" name="sortuj_po">
                         <option value="0"></option>
                         <option value="1">Godziny</option>
                         <option value="2">Recenzje</option>
-
                     </select>
                     <input type="submit" name="send" value="Zatwierdź">
                 </form>
             </div>
             <?php
-
-                require("getuserforranking.php");
-
+                require("getuserranking.php");
             ?>
         </div>
         <div id="footer">

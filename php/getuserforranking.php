@@ -1,10 +1,6 @@
 <?php
-require("connect.php");
-$query = "SELECT * FROM data";
-$result = $conn->query($query);
 while($row = $result->fetch_array())
 {
-
     $userid=$row['ID_User'];
     $user=$row['Username'];
     $hours=$row["Hours"];
@@ -23,13 +19,10 @@ while($row = $result->fetch_array())
     echo '</div>';
     echo '<div class="rightcolumn" style="width:50%;">';
     echo '<div class="info">&nbsp;</div>';
-
     echo '<h1>Ilość Recenzji: '.$recenzja.'</h1>';
-
     echo '<h1>Ilość obejrzanych minut: '.$hours.'</h1>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
-
 }
 ?>
