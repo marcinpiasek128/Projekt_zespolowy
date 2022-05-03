@@ -32,6 +32,7 @@ else {
         $result = mysqli_query($conn,$query) or die(mysqli_error());
         $fetchAverage = mysqli_fetch_array($result);
         $averageRating = $fetchAverage['averageRating'];
+        echo '<script>window.location.href = window.location.href;</script>';
     }
 }
 ?>

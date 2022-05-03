@@ -10,6 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/movie.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
     <script src="../script/searchphp.js"></script>
 </head>
 
@@ -107,6 +108,11 @@ session_start();
             <?php
                 include("getuser.php");
             ?>
+
+            <?php
+                require("category_adminpage.php");
+            ?>
+            
             
             </div>
         </div>
