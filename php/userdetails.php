@@ -36,7 +36,7 @@
                 echo "Zaproponuj nowy film";
             echo "</th>";
             echo "<th>";
-                echo "Możesz zostać recenzentem";
+                echo "Zostań recenzentem";
             echo "</th>";
         echo "</tr>";
     
@@ -68,17 +68,43 @@
                     echo $recenzja;
                 echo "</td>";
                 echo "<td>";
-                    echo $row["Rank"];
+                    echo $row["rank_role"];
                 echo "</td>";
                 echo "<td>";
-                    echo "<form method='post' action='movierequest.php' enctype='multipart/form-data'>";
+                    $sql = "SELECT * FROM data WHERE Username='$xusername'";
+                    $result = $conn->query($sql);
+                    while($row = $result->fetch_array()){
+                        $uid = $row['ID_User'];
+                        $accept_rank = $row['agreed'];
+                        $role=$row['rank_role'];
+                    }
+                    if($role == "Recenzent"){
+                        echo "<form method='post' action='movierequest-recenzent.php' enctype='multipart/form-data'>";
                         echo "<input type='submit' value='Dodaj!' name='but_submit' />";
-                    echo "</form>";
+                        echo "</form>";
+                    }
+                    else{
+                        echo "<form method='post' action='movierequest.php' enctype='multipart/form-data'>";
+                        echo "<input type='submit' value='Dodaj!' name='but_submit' />";
+                        echo "</form>";
+                    }
                 echo "</td>";
                 echo "<td>";
-                    echo "<center><button>";
-                        echo "Zaakceptuj";
-                    echo "</button></center>";
+                    if ($accept_rank == '0')
+                    {
+                        echo "<form action='suggest_accepted.php' method='POST'>";
+                            echo "<input value='$uid' name='suggest_rank_accepted' hidden/>";
+                            echo "<input type='submit' value='Zgódź się'>";
+                        echo "</form>";
+                    }
+                    else if ($accept_rank == '1')
+                    {
+                        echo "Już jesteś recenzentem";
+                    }
+                    else
+                    {
+                        echo "Nie możesz jeszcze zostać recenzentem";
+                    }
                 echo "</td>";
             echo "</tr>";
         }
