@@ -61,12 +61,30 @@
                     echo $row["Hours"];
                 echo "</td>";
                 echo "<td>";
-                    echo $row["Rank"];
+                    echo $row["rank_role"];
                 echo "</td>";
                 echo "<td>";
-                    echo "<button>";
-                        echo "Zaproponuj recenzenta";
-                    echo "</button>";
+                    if($row["rank_role"] == "Recenzent")
+                    {
+                    echo "<form action='cancel_rank.php' method='POST'>";
+                        echo "<input value='$row[ID_User]' name='cancel_rank' hidden/>";
+                        echo "<input type='submit' value='Cofnij rangę'>";
+                    echo "</form>";
+                    }
+                    else
+                    {
+                        if($row["agreed"] == "0")
+                        {
+                            echo "Propozycja wysłana";
+                        }
+                        else if ($row["agreed"] == "")
+                        {
+                            echo "<form action='suggest.php' method='POST'>";
+                                echo "<input value='$row[ID_User]' name='suggest_rank' hidden/>";
+                                echo "<input type='submit' value='Zaproponuj rangę'>";
+                            echo "</form>";
+                        }
+                    }
                 echo "</td>";
                 echo "<td>";
                     echo "<form action='ban.php' method='POST'>";
