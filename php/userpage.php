@@ -85,6 +85,54 @@ require("connect.php");
             ?>
 
             </div>
+
+
+            <br><br><br><br><br>
+                        <div id="rated">
+                        <h2>Polecane:</h2>
+                <?php
+                $user=$_SESSION['ID_User'];
+                $query = "SELECT Types,COUNT(Types) as suma from movies join rating on movies.ID_Movie=rating.ID_Movie WHERE rating.ID_User='$user' GROUP BY Types ORDER BY suma DESC LIMIT 1";
+                $result = $conn->query($query);
+                while($row = $result->fetch_array())
+                {
+                $types=$row['Types'];
+                $suma=$row['suma'];
+                $query = "SELECT movies.ID_Movie,Title,Poster_picture FROM movies LEFT JOIN rating ON movies.ID_Movie=rating.ID_Movie WHERE rating.ID_User IS NULL AND Types='$types' LIMIT 5";
+                $result = $conn->query($query);
+                while($row = $result->fetch_array())
+                {                 
+                    $movieid = $row['ID_Movie'];
+                    $title = $row['Title'];
+                    $Poster_picture = $row['Poster_picture'];
+
+
+                
+                ?>
+                            <div class="movie">
+                <div class="title">
+                    <?php
+                        echo '<a href="movie.php?q='.$movieid.'">';
+                        echo $title;  
+                        echo '</a>';
+                    ?>
+                </div>
+                <div class="row">
+                    <div class="leftcolumn" style="width:8%">
+                    <?php echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Poster_picture).'" />'; ?>
+                    </div>
+                    <div class="rightcolumn" style="width:88%">
+                    </div>
+                </div>
+            </div>
+            <?php
+                }
+            }
+            ?>
+        </div>
+
+
+
                         <br><br><br><br><br>
             <div id="rated">
                 <h2>Filmy, które oceniłeś:</h2>
